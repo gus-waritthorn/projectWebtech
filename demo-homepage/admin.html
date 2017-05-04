@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	   
+  <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="style-index.css">
+	<link rel="stylesheet" href="style-admin.css">
+	<title>Admin</title>
+</head>
+<body>
+	<div class="container">
+			<header class="col-md-12" id="navbar-wrapper">
+		  		<nav class="navbar navbar-default navbar-fixed-top">
+		    		<div class="navbar-header">
+		      			<a class="navbar-brand" href="index.html">
+		        			<img alt="Brand" id="home-icon" src="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
+		      			</a>		      			 
+		      		</div>
+		      		<ul class="nav navbar-nav navbar-right top-right">
+		      			<li><a href="">Login</a></li>
+		      			<li><a href="">Sign Up</a></li>
+		      		</ul>		      		
+		      		
+				</nav>
+			</header>
+
+			 <div class="col-md-3" id="col-btn">
+				<a class="button" data-popup-open="popup-1" id= "att" style="vertical-align:middle;background-color: #F57F17;"><span>Generate Code</span></a>
+			 	<a class="button" style="vertical-align:middle;background-color: #F9A825;" href="#" data-toggle="#add-course"><span>Add Course </span></a>
+			 	<a class="button" style="vertical-align:middle;background-color: #FBC02D;" href="#" data-toggle="#new-course"><span>New Course </span></a>		
+			 	<a class="button" style="vertical-align:middle;background-color: #FDD835;" href="#"><span>Update Promotion </span></a>
+			 	<a class="button" style="vertical-align:middle;background-color: #FFD740;" href="#"><span>Up Link Youtube</span></a>
+			 	<a class="button" style="vertical-align:middle;background-color: #FFEB3B;" href="#"><span>Add Teacher Info</span></a>
+			 </div>
+		
+		<div class="popup" data-popup="popup-1">
+		    <div class="popup-inner">
+					<h1>Generate Class Code</h1>
+					<hr>
+					<div class="class">
+						<label><h3>Select Class 
+							<select name="class" id="class-selected">
+								<option value="">Guitar</option>
+								<option value="">Singing</option>
+								<option value="">Piano</option>
+								<option value="">Violin</option>
+							</select>
+							</h3>
+						</label>
+					</div>				
+				<br>
+		        <button  class="btn btn-info" data-popup-close="popup-1" style="width: 100%;font-size: 20px;">Generate</button>
+
+		        <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+		    </div>
+		</div>
+
+
+			<div class="col-md-8" id="add-course">
+				Add
+			</div>
+
+			<div class="col-md-8" id="new-course">
+				New
+			</div>	
+	</div>
+
+
+	<script type="text/javascript">
+		$(function() {
+		//----- OPEN
+			$('[data-popup-open]').on('click', function(e)  {
+				var targeted_popup_class = jQuery(this).attr('data-popup-open');
+				$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+
+				e.preventDefault();
+			});
+
+			//----- CLOSE
+			$('[data-popup-close]').on('click', function(e)  {
+				var targeted_popup_class = jQuery(this).attr('data-popup-close');
+				$('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+
+				e.preventDefault();
+			});
+
+
+			$("a[data-toggle]").on("click", function(e) {
+			  e.preventDefault();  // prevent navigating
+			  var selector = $(this).data("toggle");  // get corresponding selector from data-toggle
+			  $("col-md-8").hide();
+			  $(selector).show();
+			});
+		});
+	</script>
+</body>
+</html>
