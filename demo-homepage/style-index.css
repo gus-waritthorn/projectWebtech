@@ -41,7 +41,9 @@ body{
 	margin-right: 1%;
 }
 
-
+.mslogo{
+	margin-left: 5rem;
+}
 
 
 /*slideshow*/
@@ -115,12 +117,7 @@ iframe{
 }
 
 
-#teacher-logo{
-	display: block;
-	height: 200px;
-	width: 1000px;
-    margin: 1rem auto 6rem auto;   
-}
+
 
 /*Footer*/
 .float-right{

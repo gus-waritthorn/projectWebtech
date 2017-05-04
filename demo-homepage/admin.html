@@ -15,8 +15,9 @@
 	   
   <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="style-index.css">
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 	<link rel="stylesheet" href="style-admin.css">
 	<title>Admin</title>
 </head>
@@ -29,6 +30,9 @@
 		        			<img alt="Brand" id="home-icon" src="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
 		      			</a>		      			 
 		      		</div>
+		      		<div class=" navbar-nav navbar-default mslogo">
+                		<h1 style="font-family: 'Acme', sans-serif;font-size: 25px;margin-top: 1.3rem"> Music School</h1>
+              		</div>
 		      		<ul class="nav navbar-nav navbar-right top-right">
 		      			<li><a href="">Login</a></li>
 		      			<li><a href="">Sign Up</a></li>
@@ -38,14 +42,165 @@
 			</header>
 
 			 <div class="col-md-3" id="col-btn">
-				<a class="button" data-popup-open="popup-1" id= "att" style="vertical-align:middle;background-color: #F57F17;"><span>Generate Code</span></a>
-			 	<a class="button" style="vertical-align:middle;background-color: #F9A825;" href="#" data-toggle="#add-course"><span>Add Course </span></a>
-			 	<a class="button" style="vertical-align:middle;background-color: #FBC02D;" href="#" data-toggle="#new-course"><span>New Course </span></a>		
-			 	<a class="button" style="vertical-align:middle;background-color: #FDD835;" href="#"><span>Update Promotion </span></a>
-			 	<a class="button" style="vertical-align:middle;background-color: #FFD740;" href="#"><span>Up Link Youtube</span></a>
-			 	<a class="button" style="vertical-align:middle;background-color: #FFEB3B;" href="#"><span>Add Teacher Info</span></a>
+				<button class="button" data-popup-open="popup-1" id= "att" style="vertical-align:middle;background-color: #F57F17;"><span>Generate Code</span></button>
+
+			 	<button class="button" data-toggle-open="toggle-addcourse" style="vertical-align:middle;background-color: #F9A825;"><span>Add Course </span></button>
+
+			 	<button class="button" data-toggle-open="toggle-createcourse" style="vertical-align:middle;background-color: #FBC02D;" ><span>Create Course </span></a>		
+
+			 	<button class="button" data-toggle-open="toggle-updatepromo" style="vertical-align:middle;background-color: #FFD740;"><span>Update Promotion </span></a>
+			 	<button class="button" data-toggle-open="toggle-upvideo" style="vertical-align:middle;background-color: #FDD835;" ><span>Up Link Youtube</span></a>
+			 	<button class="button" data-toggle-open="toggle-addteacher" style="vertical-align:middle;background-color: #FFEB3B;"><span>Update Teacher</span></a>
 			 </div>
 		
+		<!-- toggle box -->
+		<div class="col-md-8" id="col-toggle-box">
+			<!-- Add Course Box -->
+			<div  class="toggle" data-toggle="toggle-addcourse">
+		    <div class="toggle-box">
+					<h1>Add Course</h1>
+					<hr>
+					<div>
+						<label>
+							<h3>Student Email: <input id= "std-email" type="email" name="std-email"></h3>
+						</label>
+							<br>
+						<label><h3>Select Course 
+							<select name="course" id="course-selected">
+								<option value="">Guitar</option>
+								<option value="">Singing</option>
+								<option value="">Piano</option>
+								<option value="">Violin</option>
+							</select>
+							</h3>
+						</label>
+					</div>				
+				<br>
+		        <button  class="btn btn-info" data-toggle-open="toggle-addcourse" style="width: 100%;font-size: 20px;">Add Course</button>
+
+		        <!-- <a class="popup-close" data-popup-close="popup-1" href="#">x</a> -->
+		    </div>
+		    </div> <!-- End Add Course Box -->
+
+		    <!-- Create Course Box -->
+		    <div  class="toggle" data-toggle="toggle-createcourse">
+		    <div class="toggle-box">
+					<h1>Create Course</h1>
+					<hr>
+
+					<div >
+					<label>
+							<h3>Course Name: <input id= "course-name" type="text" name="course-name"></h3>
+					</label>
+					<br>
+						<label><h3>Select Course Level 
+							<select name="level" id="level-selected">
+								<option value="">Beginner</option>
+								<option value="">Intermediate</option>
+								<option value="">Expert</option>								
+							</select>
+							</h3>
+						</label>
+						<br>
+						<label>
+							<h3>Date: <input id= "course-date" type="text" name="course-date"></h3>
+						</label>
+						<br>
+						<label>
+							<h3>Price: <input id= "price" type="text" name="price"></h3>
+						</label>
+
+					</div>				
+				<br>
+		        <button  class="btn btn-info" data-toggle-open="toggle-createcourse" style="width: 100%;font-size: 20px;">Create Course</button>
+
+		        <!-- <a class="popup-close" data-popup-close="popup-1" href="#">x</a> -->
+		    </div>
+		    </div> <!-- End Create Coure Box -->
+
+		    <!-- Update Promo Box -->
+		    <div  class="toggle" data-toggle="toggle-updatepromo">
+		    <div class="toggle-box">
+					<h1>Update Promotion</h1>
+					<hr>
+					<div >
+						<label><h3>Select Old Promotion 
+							<select name="promo" id="promo-selected">
+								<option value="">1</option>
+								<option value="">2</option>
+								<option value="">3</option>								
+							</select>
+							</h3>
+						</label>
+						<br>
+						<label>
+							<h3 style="text-align: left;">New Promotion: <input class="new-promo" value="Upload Promotion" type="file" style=""></h3>
+						</label>
+						<img class="sample-promo" src="https://placehold.it/450x150" width="450" height="150">
+						
+					</div>				
+				<br>
+		        <button  class="btn btn-info" data-toggle-open="toggle-updatepromo" style="width: 100%;font-size: 20px;">Update Promotion</button>
+
+		        <!-- <a class="popup-close" data-popup-close="popup-1" href="#">x</a> -->
+		    </div>
+		    </div> <!-- End Update Promo Box -->
+
+		    <!-- Up Link Youtube Box -->
+		    <div  class="toggle" data-toggle="toggle-upvideo">
+		    <div class="toggle-box">
+					<h2>Up Link Youtube</h2>
+					<hr>
+					<div>
+						<label><h5>Select Old Video 
+							<select name="video" id="video-selected">
+								<option value="">1</option>
+								<option value="">2</option>
+								<option value="">3</option>								
+							</select>
+							</h5>
+						</label>
+						<br>
+						<label>
+							<h5 style="text-align: left;">New Video: <input class="new-video" placeholder="Ex.https://www.youtube.com/embed/4TrDsI56i24"  type="text" size="40" style=""></h5>
+							<button class="btn btn-warning" id="show-sample-video"> Show Sample New Video</button>
+						</label>
+						<br>
+						<iframe class="sample-video" src="https://placehold.it/400x220" width="400" height="200" style="margin-top:0"></iframe>
+						
+					</div>								
+				<br>
+		        <button  class="btn btn-info" data-toggle-open="toggle-upvideo" style="width: 100%;font-size: 16px;">Up Link</button>
+
+		        <!-- <a class="popup-close" data-popup-close="popup-1" href="#">x</a> -->
+		    </div>
+		    </div> <!-- End Up Linke Youtube Box -->
+
+		    <!-- Add Teacher Info Box -->
+		    <div  class="toggle" data-toggle="toggle-addteacher">
+		    <div class="toggle-box">
+					<h1>Update Teacher</h1>
+					<hr>
+					<div>
+						<img class="sample-teacher-pic" src="https://placehold.it/150x150" width="150" height="150" style="border-radius: 50%;">
+						<label>
+							<h4 style="text-align: left;">Teacher Picture: <input class="teacher-pic" value="update teacher" type="file" style=""></h4>
+						</label>						
+						<label>
+							<h4 style="text-align: left;">Teacher Name: <input class="teacher-name" type="text"></h4>
+						</label>						
+						<label>
+							<h4 style="text-align: left;">Teacher Profile: <br> ​<textarea id="teacher-profile" rows="3" cols="45"></textarea></h4>
+						</label>
+					</div>				
+				<br>
+		        <button  class="btn btn-info" data-toggle-open="toggle-addteacher" style="width: 100%;font-size: 20px;">Update Teacher</button>
+
+		        <!-- <a class="popup-close" data-popup-close="popup-1" href="#">x</a> -->
+		    </div>
+		    </div> <!-- End Update Teacher Info Box -->
+		</div> <!-- End toggle box -->
+
 		<div class="popup" data-popup="popup-1">
 		    <div class="popup-inner">
 					<h1>Generate Class Code</h1>
@@ -69,13 +224,6 @@
 		</div>
 
 
-			<div class="col-md-8" id="add-course">
-				Add
-			</div>
-
-			<div class="col-md-8" id="new-course">
-				New
-			</div>	
 	</div>
 
 
@@ -98,12 +246,51 @@
 			});
 
 
-			$("a[data-toggle]").on("click", function(e) {
-			  e.preventDefault();  // prevent navigating
-			  var selector = $(this).data("toggle");  // get corresponding selector from data-toggle
-			  $("col-md-8").hide();
-			  $(selector).show();
+			// toggle
+			$('[data-toggle-open]').on('click', function(e)  {
+				var targeted_toggle_class = jQuery(this).attr('data-toggle-open');
+				if($('[data-toggle="' + targeted_toggle_class + '"]').is(':visible')){
+					$(".toggle").fadeOut('slow');
+				}
+				else{				
+					$(".toggle").fadeOut('slow');
+					$('[data-toggle="' + targeted_toggle_class + '"]').fadeIn('slow');			
+				}
 			});
+
+			//show ex. new promo img
+			var readURL = function(input) {
+     	   if (input.files && input.files[0]) {
+            	var reader = new FileReader();
+        	    reader.onload = function (e) {
+                	$('.sample-promo').attr('src', e.target.result);                
+            	}
+            	reader.readAsDataURL(input.files[0]);
+        	}
+    	  }
+			 $(".new-promo").on('change', function(){
+       			 readURL(this);
+    		});
+
+			// show ex. new video
+			 $("#show-sample-video").on('click', function(){
+       			 $('.sample-video').attr('src', $('.new-video').val());  
+    		});
+
+			 // teacher pictuer
+			 var readURL2 = function(input) {
+     	   if (input.files && input.files[0]) {
+            	var reader = new FileReader();
+        	    reader.onload = function (e) {
+                	$('.sample-teacher-pic').attr('src', e.target.result);                
+            	}
+            	reader.readAsDataURL(input.files[0]);
+        	}
+    	  }
+			 $(".teacher-pic").on('change', function(){
+       			 readURL2(this);
+    		});
+
 		});
 	</script>
 </body>
