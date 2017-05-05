@@ -12,11 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
 
      <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
- 
+
     <link rel="stylesheet" href="{{ URL::asset('css/style-index.css') }}">
     <!-- Scripts -->
     <script>
@@ -27,65 +27,60 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
+      <nav class="navbar navbar-default navbar-fixed-top">
+                  <div class="navbar-header">
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                          <span class="sr-only">Toggle Navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
 
-                    <!-- Branding Image -->
-                    <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                      <a class="navbar-brand" href="{{ url('/') }}">
                         <img alt="Brand" id="home-icon" src="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
-                    </a>
+                        <div class=" navbar-nav  mslogo">
+                          <a href="{{ url('/') }}" style="font-family: 'Acme', sans-serif;font-size: 25px;"> Music School</a>
+                        </div>
+                      </a>
                     </div>
-                </div>
+                      <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right top-right">
+               @if (Route::has('login'))
+                   @if (Auth::check())
+                       <li><a href=""> My Course</a></li>
+                       <li class="divider-vertical"></li>
+                       <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                          {{ Auth::user()->email }} <span class="caret"></span>
+                                      </a>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                    <li>                <a href="{{ url('/') }}" style="font-family: 'Acme', sans-serif;font-size: 25px;color: black;margin-left: 3rem;"> Music School</a></li>
-                    </ul>
+                                      <ul class="dropdown-menu" role="menu">
+                                        <li><a href="">My Profile</a></li>
+                                        <li><a href="">My Point</a></li>
+                                        <li><hr style="margin: 0"></li>
+                                          <li>
+                                              <a href="{{ route('logout') }}"
+                                                  onclick="event.preventDefault();
+                                                           document.getElementById('logout-form').submit();">
+                                                  Logout
+                                              </a>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li><a href=""> My Course</a></li>                            
-                            <li class="divider-vertical"></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->email }} <span class="caret"></span>
-                                </a>
+                                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                  {{ csrf_field() }}
+                                              </form>
+                                          </li>
+                                      </ul>
+                                  </li>
+                   @else
+                       <li><a href="{{ url('/login') }}">Login</a></li>
+                       <li><a href="{{ url('/register') }}">Register</a></li>
+                   @endif
+              @endif
+           </ul>
+         </div>
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      </nav>
 
         @yield('content')
     </div>
