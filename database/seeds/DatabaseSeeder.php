@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
+        //create admin user
         App\User::create([
             'id' => '1',
             'fname' => 'admin',
@@ -22,6 +23,18 @@ class DatabaseSeeder extends Seeder
             'point' => '100',
             'pathimg' => 'https://wog.ua/images/user_icon.png',
             'role' => 'admin'
+        ]);
+
+        //create student user
+        App\User::create([
+            'id' => '2',
+            'fname' => 'student',
+            'lname' => 'student',
+            'email' => 'student@example.com',
+            'password' => '$2y$10$b81y.gp3Mvqe3/ED6sWnROt9bYQwmhIOKCADpnOUbxLFugYYn3.EG',
+            'point' => '100',
+            'pathimg' => 'https://wog.ua/images/user_icon.png',
+            'role' => 'std'
         ]);
     }
 }
