@@ -60,7 +60,10 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li><a href=""> My Course</a></li>                            
+                            @if(Auth::user()->role == 'admin')
+                                <li><a href="{{ url('admin') }}"> Admin Control</a></li>    
+                            @else
+                            <li><a href=""> My Course</a></li> @endif                           
                             <li class="divider-vertical"></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -68,6 +71,10 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                <li><a href="" > My Profile</a></li>
+                                    @if(Auth::user()->role == 'std')
+                                    <li><a href="">My Point</a></li>
+                                    @endif
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
