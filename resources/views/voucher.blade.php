@@ -18,28 +18,18 @@
 	   
   <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-	<link rel="stylesheet" href="style-voucher.css">
+	<link rel="stylesheet" href="{{ URL::asset('css/style-voucher.css') }}">
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">
-                  <img alt="Brand" id="home-icon" src="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
-                </a>                 
-              </div>
-              <div class=" navbar-nav navbar-default mslogo">
-                <h1 style="font-family: 'Acme', sans-serif;font-size: 25px;margin-top: 1.3rem"> Music School</h1>
-              </div>
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Login</a></li>
-                <li><a href="">Sign Up</a></li>
-              </ul>                           
-        </nav>
+	 @include('layouts._navbar')
 
+    @if (Auth::guest())
+          <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 170px; margin:10% auto;">YOU NEED TO LOGIN TO YOUR ACCOUNT FIRST</h1>
+    @else
       <div class="container">
       	<div class="row">
       		<div class="rounded-circle" style="background-color: orange;margin:0 auto; margin-top: 7rem;" >
-      			<h1 id="my-point" style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;"> 100</h1>
+      			<h1 id="my-point" style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;"> {{ Auth::user()->point }}</h1>
       		</div>
       	</div>
         <hr>
@@ -92,10 +82,11 @@
           <h2>2500 Point</h2>
           <p><a class="btn btn-warning" href="#" role="button">Redeem a Voucher</a></p>
         </div><!-- /.col-lg-4 -->
+        @include('layouts._footer')
       </div>
+     @endif 
+            
 		
-
-		<!-- Voucher -->
 
 		
 </body>
