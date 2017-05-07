@@ -3,10 +3,10 @@
 		    <div class="toggle-box">
 					<h1>Add Course</h1>
 					<hr>
-					<form action="admin/addCourse" method="post">
+					<form action="addCourse" method="post">
 					<div>
 						<label>
-							<h3>Student Email: <input id="std-email" type="email" name="std-email"></h3>
+							<h3>Student Email: <input id="std-email" type="email" name="std-email" required></h3>
 						</label>
 							<br>
 						<label><h3>Select Course
@@ -20,7 +20,7 @@
 						</label>
 					</div>
 				<br>
-		        <button  class="btn btn-info" data-toggle-open="toggle-addcourse" style="width: 100%;font-size: 20px;">Add Course</button>
+		        <button type="submit" class="btn btn-info" style="width: 100%;font-size: 20px;">Add Course</button>
 		        <input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 					</form>
 		        <!-- <a class="popup-close" data-popup-close="popup-1" href="#">x</a> -->
