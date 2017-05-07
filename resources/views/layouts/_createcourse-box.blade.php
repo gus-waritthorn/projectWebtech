@@ -6,7 +6,7 @@
 					<div style="float: left;">
 							<img class="sample-course-pic" src="https://placehold.it/150x150" width="150" height="150" style="border-radius: 50%;">
 					</div>
-					<form action="admin/createCourse" method="post" >
+					<form action="createCourse" method="post" >
 					<div style="float: left;margin-left:5rem;text-align: left;" >
 					<label>
 							<h4> Course Name: <input id= "course-name" type="text" name="course-name" required></h4>
