@@ -16,8 +16,7 @@ class CreateTeacherTable extends Migration
       Schema::create('teacher', function (Blueprint $table) {
           $table->increments('no');
           $table->string('path');
-          $table->string('fname');
-          $table->string('lname');
+          $table->string('name');          
           $table->string('description');
           $table->rememberToken();
           $table->timestamps();
