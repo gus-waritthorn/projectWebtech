@@ -23,13 +23,13 @@
 </head>
 <body>
     @include('layouts._navbar')
-    <div class="container" style="padding-top: 80px;padding-bottom: 80px;">
+    <div class="container">
     <!-- Slideshow -->
         <div class="row" style="overflow: hidden" id="slide">
             <div class="w3-container w3-display-container" >
-                <img class="mySlides" src="/img/promo/trialfree-promo.png">
-                  <img class="mySlides" src="/img/promo/invitefriend-promo.png">
-                  <img class="mySlides" src="/img/promo/getvoucher-promo.png" >
+                <img id="img1" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/trialfree-promo.png') }}">
+                  <img id="img2" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/invitefriend-promo.png') }}">
+                  <img id="img3" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/getvoucher-promo.png') }}" >
 
                   <div class="w3-center w3-container w3-section w3-large w3-text-white      w3-display-bottommiddle" style="width:100%">
                     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
@@ -75,7 +75,7 @@
       <!-- Hall of Fame -->
       <div class="row content">
       <div class="col-md-12">
-        <img id="hall_of_fame" src="/img/res/index/hall_of_fame.png" >
+        <img id="hall_of_fame" src="{{ URL::asset('img\res\index\hall_of_fame.png') }}" >
       </div>
         <div class="col-lg-4">
           <div class="embed-responsive embed-responsive-16by9">
@@ -112,20 +112,20 @@
         <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 60px;"> Teacher</h1>
       </div>
         <div class="col-lg-4">
-          <img class="rounded-circle" src="\img\teacher\space.jpg">
+          <img class="rounded-circle" src="{{ URL::asset('img\teacher\space.jpg') }}">
           <h2>Jakkawan</h2>
           <p>The Mask Singer Commentator</p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <img class="rounded-circle" src="\img\teacher\fat.png">
+          <img class="rounded-circle" src="{{ URL::asset('img\teacher\fat.png') }}">
           <h2>Maneenuch</h2>
           <p>The Mask Singer Commentator</p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
           <p class="float-right "><a href="#">See All</a></p>
-          <img class="rounded-circle" src="\img\teacher\jane.jpg">
+          <img class="rounded-circle" src="{{ URL::asset('img\teacher\jane.jpg') }}">
           <h2>Jannifer</h2>
           <p>The Voice Coach</p>
         </div><!-- /.col-lg-4 -->
@@ -152,7 +152,29 @@
     function currentDiv(n) {
       showDivs(slideIndex = n);
     }
-
+    function dragging(event){
+    var x = event.clientX;
+    var y = event.clientY;
+    var coor = "Coordinates: (" + x + "," + y + ")";
+    document.getElementById("demo").innerHTML = coor;
+    }
+    function dragend(event){
+      var x = event.clientX;
+      detectDrag(x);
+    }
+    function detectDrag(xUp){
+      var xLength = xUp-xDown;
+        if( xLength >= 100){
+          //Left slide will show
+          showDivs(slideIndex -= 1);
+        } else {
+          //Right slide will show
+          showDivs(slideIndex += 1);
+        }
+    }
+    function mousedown(e){
+      xDown = e.clientX;
+    }
     function showDivs(n) {
       var i;
       var x = document.getElementsByClassName("mySlides");
