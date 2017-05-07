@@ -17,13 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', ['middleware' => ['admin', 'auth'], function(){
+Route::get('/home', ['middleware' => 'auth', function(){
     return view('home');
 }]);
 
 Route::get('/mypoint', function () {
     return view('voucher');
-}); 
+});
 
 Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
     return view('admin');
