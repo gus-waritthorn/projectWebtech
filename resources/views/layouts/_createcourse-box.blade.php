@@ -6,36 +6,38 @@
 					<div style="float: left;">
 							<img class="sample-course-pic" src="https://placehold.it/150x150" width="150" height="150" style="border-radius: 50%;">
 					</div>
+					<form action="admin/createCourse" method="post" >
 					<div style="float: left;margin-left:5rem;text-align: left;" >
 					<label>
-							<h3 Course Name: <input id= "course-name" type="text" name="course-name"></h3>
+							<h4> Course Name: <input id= "course-name" type="text" name="course-name" required></h4>
 					</label>
 					<br>
-						<label><h3>Select Course Level
-							<select name="level" id="level-selected">
-								<option value="">Beginner</option>
-								<option value="">Intermediate</option>
-								<option value="">Expert</option>
+						<label><h4>Select Course Level 
+							<select name="course-level" id="level-selected">
+								<option value="Beginner">Beginner</option>
+								<option value="Intermediate">Intermediate</option>
+								<option value="Expert">Expert</option>								
 							</select>
-							</h3>
+							</h4>
 						</label>
 						<br>
 						<label>
-							<h3>Date: <input id= "course-date" type="text" name="course-date" required></h3>
+							<h4>Date: <input id= "course-date" type="int" name="course-date" required></h4>
 						</label>
 						<br>
 						<label>
-							<h3>Price: <input id= "price" type="text" name="price" required></h3>
+							<h4>Price: <input id= "price" type="text" name="course-price" required></h4>
 						</label>
-						<br>
+						<br>					
 						<label style="margin-bottom: 1.5rem;">
-							<h3 style="text-align: left;">Course Picture: <input class="course-pic" value="Upload Course" type="file" style=""></h3>
+							<h4 style="text-align: left;">Course Picture: <input class="course-pic"  type="file" name="course-pic" required></h4>
 						</label>
-
-					</div>
-				<br >
-		        <button  type="submit" class="btn btn-info" style="width: 100%;font-size: 20px;">Create Course</button>
-
+	
+					</div>				
+				<br >			
+		        <button type="submit" class="btn btn-info" style="width: 100%;font-size: 20px;">Create Course</button>
+		        <input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+				</form>
 		        <!-- <a class="popup-close" data-popup-close="popup-1" href="#">x</a> -->
 		    </div>
 		    </div> <!-- End Create Coure Box -->
