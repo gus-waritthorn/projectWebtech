@@ -19,6 +19,7 @@ class CreateCourseTable extends Migration
           $table->integer('numday');
           $table->integer('price');
           $table->string('level');
+          $table->string('path');
           $table->rememberToken();
           $table->timestamps();
       });

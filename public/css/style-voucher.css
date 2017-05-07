@@ -72,93 +72,20 @@ body{
      }
 }
 
-h1{
-	 -moz-text-shadow: 0px 4px 4px #000;
-  -webkit-text-shadow: 0px 4px 4px #000;
-  text-shadow: 0px 4px 4px #000;
-	}
-
-
-/*slideshow*/
-#slide{
-	 -moz-box-shadow: 0 0 20px #000;
-  -webkit-box-shadow: 0 0 20px #000;
-  box-shadow: 0 0 20px #000;
-}
-.w3-display-container{
-	width: 100%;
-	padding: 0;
-	position: relative;
-
-}
-.mySlides {
-	display:none;
-	position: relative;
-    margin-top: 5rem;
-	width: 100%;
-	height:600px;
-	-moz-box-shadow: 0 0 18px  #000 ;
- 	 -webkit-box-shadow: 0 0 18px  #000 ;
-  	box-shadow: 0 0 18px  #000 ;
-}
-.w3-left, .w3-right, .w3-badge {
-	cursor:pointer
-}
-.w3-badge {
-	height:13px;width:13px;padding:0
-}
-
-/*Course,Video*/
-.content{
-	margin-top: 4rem;
-
-}
-.content .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.content h2 {
-  font-weight: normal;
-}
-.content .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-}
 .rounded-circle{
 	width:250px;
 	height: 250px;
 	border-radius:50%;
-
 	  -moz-box-shadow: 4px 4px 14px #000;
   -webkit-box-shadow: 4px 4px 14px #000;
-  box-shadow: 4px 4px 14px #000;
-}
-
-/*Hall of Fame Video */
-#hall_of_fame{
-	display: block;
-    margin: 1rem auto 6rem auto;
-		height: 50%;
-		width: 50%;
-
-}
-iframe{
-	height: 300px;
-	width: 400px;
-
-	 -moz-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-
-  -moz-box-shadow: 4px 4px 14px #000;
-  -webkit-box-shadow: 4px 4px 14px #000;
-  box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000;	
 }
 
 
-
-
-
+.col-lg-4{
+	text-align: center;
+	margin-bottom: 10rem;
+}
 
 /*Footer*/
 .float-right{
