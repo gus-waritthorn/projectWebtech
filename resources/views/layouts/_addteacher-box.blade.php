@@ -3,7 +3,7 @@
 		    <div class="toggle-box">
 					<h1>Update Teacher</h1>
 					<hr>
-					<form action="addteacher" method="post" >
+					<form action="addTeacher" method="post" >
 					<div>
 						<img class="sample-teacher-pic" src="https://placehold.it/150x150" width="150" height="150" style="border-radius: 50%;">
 

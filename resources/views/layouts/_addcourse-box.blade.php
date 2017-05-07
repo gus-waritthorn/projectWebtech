@@ -20,7 +20,7 @@
 						</label>
 					</div>
 				<br>
-		        <button type="submit" class="btn btn-info" style="width: 100%;font-size: 20px;">Add Course</button>
+		        <button type="submit"  class="btn btn-info" style="width: 100%;font-size: 20px;">Add Course</button>
 		        <input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 					</form>
 		        <!-- <a class="popup-close" data-popup-close="popup-1" href="#">x</a> -->
