@@ -28,6 +28,8 @@ Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');
 }]);
 
+Route::post('admin/addCourse', 'regiscourseController@add');
+
 Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
     return view('admin');
 }]);
