@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -10,12 +12,12 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	   
+
   <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-admin.css') }}">
@@ -23,24 +25,24 @@
 </head>
 <body>
  	@include('layouts._navbar')
-	<div class="container">			
+	<div class="container">
 			 <div class="col-md-3" id="col-btn">
 				<button class="button" data-popup-open="popup-1" id= "att" style="vertical-align:middle;background-color: #F57F17;"><span>Generate Code</span></button>
 
 			 	<button class="button" data-toggle-open="toggle-addcourse" style="vertical-align:middle;background-color: #F9A825;"><span>Add Course </span></button>
 
-			 	<button class="button" data-toggle-open="toggle-createcourse" style="vertical-align:middle;background-color: #FBC02D;" ><span>Create Course </span></button>		
+			 	<button class="button" data-toggle-open="toggle-createcourse" style="vertical-align:middle;background-color: #FBC02D;" ><span>Create Course </span></button>
 
 			 	<button class="button" data-toggle-open="toggle-updatepromo" style="vertical-align:middle;background-color: #FFD740;"><span>Update Promotion </span></button>
 			 	<button class="button" data-toggle-open="toggle-upvideo" style="vertical-align:middle;background-color: #FDD835;" ><span>Up Link Youtube</span></button>
 			 	<button class="button" data-toggle-open="toggle-addteacher" style="vertical-align:middle;background-color: #FFEB3B;"><span>Update Teacher</span></button>
 			 </div>
-		
+
 		<!-- toggle box -->
 		<div class="col-md-8" id="col-toggle-box">
 			@include('layouts._addcourse-box')
 		    @include('layouts._createcourse-box')
-		    @include('layouts._updatepromo-box')		    
+		    @include('layouts._updatepromo-box')
 		    @include('layouts._upyoutube-box')
 		    @include('layouts._addteacher-box')
 		</div> <!-- End toggle box -->
@@ -76,9 +78,9 @@
 				if($('[data-toggle="' + targeted_toggle_class + '"]').is(':visible')){
 					$(".toggle").fadeOut('slow');
 				}
-				else{				
+				else{
 					$(".toggle").fadeOut('slow');
-					$('[data-toggle="' + targeted_toggle_class + '"]').fadeIn('slow');			
+					$('[data-toggle="' + targeted_toggle_class + '"]').fadeIn('slow');
 				}
 			});
 
@@ -87,7 +89,7 @@
     	 	   if (input.files && input.files[0]) {
             	var reader = new FileReader();
         	    reader.onload = function (e) {
-                	$('.sample-course-pic').attr('src', e.target.result);                
+                	$('.sample-course-pic').attr('src', e.target.result);
             	}
             	reader.readAsDataURL(input.files[0]);
         	}
@@ -101,7 +103,7 @@
      	   if (input.files && input.files[0]) {
             	var reader = new FileReader();
         	    reader.onload = function (e) {
-                	$('.sample-promo').attr('src', e.target.result);                
+                	$('.sample-promo').attr('src', e.target.result);
             	}
             	reader.readAsDataURL(input.files[0]);
         	}
@@ -112,7 +114,7 @@
 
 			// show ex. new video
 			 $("#show-sample-video").on('click', function(){
-       			 $('.sample-video').attr('src', $('.new-video').val());  
+       			 $('.sample-video').attr('src', $('.new-video').val());
     		});
 
 			 // show teacher pictuer
@@ -120,7 +122,7 @@
      	   if (input.files && input.files[0]) {
             	var reader = new FileReader();
         	    reader.onload = function (e) {
-                	$('.sample-teacher-pic').attr('src', e.target.result);                
+                	$('.sample-teacher-pic').attr('src', e.target.result);
             	}
             	reader.readAsDataURL(input.files[0]);
         	}

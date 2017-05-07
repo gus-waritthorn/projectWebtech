@@ -39,7 +39,7 @@
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                             <li class="divider-vertical"></li>
                             <li><a href=""> My Course</a></li>
-                            @endif                            
+                            @endif
                             <li class="divider-vertical"></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -69,4 +69,4 @@
                 </div>
             </div>
         </nav>
-        <script src="{{ asset('js/app.js') }}"></script>
+        <!-- <script src="{{ asset('js/app.js') }}"></script> -->
