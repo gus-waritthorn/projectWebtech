@@ -28,7 +28,7 @@ Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');
 }]);
 
-Route::post('addCourse', 'regiscourseController@add');
+Route::post('updatepromotion', 'updatepromotionController@update');
 
 Route::post('addCourse', 'regiscourseController@add');
 

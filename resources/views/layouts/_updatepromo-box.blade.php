@@ -3,7 +3,7 @@
 		    <div class="toggle-box">
 					<h1>Update Promotion</h1>
 					<hr>
-					<form action="admin/updatepromotion/" method="post">
+					<form action="updatepromotion" method="post">
 					<div>
 						<label><h3>Select Old Promotion
 							<select name="promo" id="promo-selected">
