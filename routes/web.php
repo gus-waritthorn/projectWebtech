@@ -30,6 +30,8 @@ Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
 
 Route::post('updatepromotion', 'updatepromotionController@update');
 
+Route::post('updatelink', 'updatelink@update');
+
 Route::post('addCourse', 'regiscourseController@add');
 
 Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
