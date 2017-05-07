@@ -27,9 +27,9 @@
     <!-- Slideshow -->
         <div class="row" style="overflow: hidden" id="slide">
             <div class="w3-container w3-display-container" >
-                <img class="mySlides" src="{{ URL::asset('img/promo/trialfree-promo.png') }}">
-                  <img class="mySlides" src="{{ URL::asset('img/promo/invitefriend-promo.png') }}">
-                  <img class="mySlides" src="{{ URL::asset('img/promo/getvoucher-promo.png') }}" >
+                <img id="img1" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/trialfree-promo.png') }}">
+                  <img id="img2" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/invitefriend-promo.png') }}">
+                  <img id="img3" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/getvoucher-promo.png') }}" >
 
                   <div class="w3-center w3-container w3-section w3-large w3-text-white      w3-display-bottommiddle" style="width:100%">
                     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
@@ -152,7 +152,29 @@
     function currentDiv(n) {
       showDivs(slideIndex = n);
     }
-
+    function dragging(event){
+    var x = event.clientX;
+    var y = event.clientY;
+    var coor = "Coordinates: (" + x + "," + y + ")";
+    document.getElementById("demo").innerHTML = coor;
+    }
+    function dragend(event){
+      var x = event.clientX;
+      detectDrag(x);
+    }
+    function detectDrag(xUp){
+      var xLength = xUp-xDown;
+        if( xLength >= 100){
+          //Left slide will show
+          showDivs(slideIndex -= 1);
+        } else {
+          //Right slide will show
+          showDivs(slideIndex += 1);
+        }
+    }
+    function mousedown(e){
+      xDown = e.clientX;
+    }
     function showDivs(n) {
       var i;
       var x = document.getElementsByClassName("mySlides");
