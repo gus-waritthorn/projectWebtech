@@ -10,6 +10,8 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -27,9 +29,9 @@
     <!-- Slideshow -->
         <div class="row" style="overflow: hidden" id="slide">
             <div class="w3-container w3-display-container" >
-                <img id="img1" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/trialfree-promo.png') }}">
-                  <img id="img2" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/invitefriend-promo.png') }}">
-                  <img id="img3" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{ URL::asset('img/promo/getvoucher-promo.png') }}" >
+                <img id="img1" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{url("/img/promo/{$promos[0]->path}")}}">
+                  <img id="img2" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{url("/img/promo/{$promos[1]->path}")}}">
+                  <img id="img3" ondrag="dragging(event)" ondragend="dragend(event)" onmousedown="mousedown(event)" class="mySlides" src="{{url("/img/promo/{$promos[2]->path}")}}" >
 
                   <div class="w3-center w3-container w3-section w3-large w3-text-white      w3-display-bottommiddle" style="width:100%">
                     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
@@ -77,29 +79,14 @@
       <div class="col-md-12">
         <img id="hall_of_fame" src="{{ URL::asset('img\res\index\hall_of_fame.png') }}" >
       </div>
+      @foreach ($vdolinks as $vdo)
         <div class="col-lg-4">
           <div class="embed-responsive embed-responsive-16by9">
-          <iframe  src="https://www.youtube.com/embed/G4cJ4wviwS8"></iframe>
+          <iframe  src="{{url("{$vdo->path}")}}"></iframe>
           </div>
-          <h2>Guitar</h2>
           <p></p>
         </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4">
-          <div class="embed-responsive embed-responsive-16by9">
-          <iframe  src="https://www.youtube.com/embed/4TrDsI56i24"></iframe>
-          </div>
-          <h2>Singing</h2>
-          <p></p>
-        </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe  src="https://www.youtube.com/embed/NUdlh5NYx2o"></iframe>
-            </div>
-          <h2>Piano</h2>
-          <p></p>
-        </div><!-- /.col-lg-4 -->
+        @endforeach
       </div> <!-- End Hall of fame -->
 
       <hr>
@@ -144,6 +131,9 @@
 <script type="text/javascript">
     var slideIndex = 1;
     showDivs(slideIndex);
+
+    var promos = <?php echo $promos; ?>;
+    var vdolinks = <?php echo $vdolinks; ?>;
 
     function plusDivs(n) {
       showDivs(slideIndex += n);

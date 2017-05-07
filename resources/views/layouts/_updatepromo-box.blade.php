@@ -3,7 +3,7 @@
 		    <div class="toggle-box">
 					<h1>Update Promotion</h1>
 					<hr>
-					<form action="updatepromotion" method="post">
+					<form action="{{url('/admin/upload/action')}}" method="post" enctype="multipart/form-data">
 					<div>
 						<label><h3>Select Old Promotion
 							<select name="promo" id="promo-selected">
@@ -15,7 +15,7 @@
 						</label>
 						<br>
 						<label>
-							<h3 style="text-align: left;">New Promotion: <input class="new-promo" value="Upload Promotion" type="file" name="promo-path" required></h3>
+							<h3 style="text-align: left;">New Promotion: <input class="new-promo" value="Upload Promotion" type="file" name="promo-path" id="promo-path" required></h3>
 						</label>
 						<img class="sample-promo" src="https://placehold.it/450x150" width="450" height="150">
 
