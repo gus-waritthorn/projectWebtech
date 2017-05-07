@@ -45,7 +45,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="" > My Profile</a></li>
                                     @if(Auth::user()->role == 'std')
-                                    <li><a href="">My Point</a></li>
+                                    <li><a href="{{ url('mypoint') }}">My Point</a></li>
                                     @endif
                                     <li>
                                         <a href="{{ route('logout') }}"
