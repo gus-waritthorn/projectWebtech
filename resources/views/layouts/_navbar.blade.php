@@ -28,12 +28,16 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
+                            <li><a href="{{ url('contact') }}">Contact Us</a></li>
+                            <li class="divider-vertical"></li>
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             @if(Auth::user()->role == 'admin')
                                 <li><a href="{{ url('admin') }}"> Admin Control</a></li>
                             @else
+                            <li><a href="{{ url('contact') }}">Contact Us</a></li>
+                            <li class="divider-vertical"></li>
                             <li><a href=""> My Course</a></li>
                             @endif                            
                             <li class="divider-vertical"></li>
