@@ -20,10 +20,6 @@ class AdminAuth
         {
             return $next($request);
         }
-        elseif (Auth::user()->role == 'std')
-        {
-            return redirect('/');
-        }
-        return redirect('/login');
+        return redirect('/home');
     }
 }
