@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class AdminAuth
+class StdAuth
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,11 @@ class AdminAuth
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->role == 'admin')
+        if (Auth::user()->role == 'std')
         {
             return $next($request);
         }
-        elseif (Auth::user()->role == 'std')
+        elseif (Auth::user()->role == 'admin')
         {
             return redirect('/home');
         }

@@ -10,20 +10,23 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 Route::get('/home', ['middleware' => 'auth', function(){
     return view('home');
 }]);
 
-Route::get('/mypoint', function () {
+Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');
-});
+}]);
 
 Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
     return view('admin');
