@@ -31,3 +31,5 @@ Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
 Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
     return view('admin');
 }]);
+
+Route::post('addteacher','teacherController@add');
