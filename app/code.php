@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class code extends Model
 {
-
-    protected $fillable = [
-        'code', 'idCourse' 
-    ];
-
+ protected $table = 'code';
+ protected $fillable = ['code','idCourse'];
+ protected $visible = ['code','idCourse'];
 }

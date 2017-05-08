@@ -140,11 +140,13 @@
 		var vm = new Vue({
 			el: '#popup_gencode',
 			data: {
-
+				showCode: '',
+				aa: false
 			},
 			methods: {
 				clickGenBtn: function() {
-					alert(this.genCode());
+					this.showCode = this.genCode();
+					alert(this.showCode);
 				},
 				genCode: function() {
 					var text = "";

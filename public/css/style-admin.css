@@ -63,7 +63,7 @@ body{
   margin: 5px;
   -moz-box-shadow: 4px 4px 14px #000;
   -webkit-box-shadow: 4px 4px 14px #000;
-  box-shadow: 4px 4px 14px #000;	
+  box-shadow: 4px 4px 14px #000;
 }
 
 .button span {
@@ -114,7 +114,7 @@ body{
     background:#fff;
     -moz-box-shadow: 4px 4px 14px #000;
   -webkit-box-shadow: 4px 4px 14px #000;
-  box-shadow: 4px 4px 14px #000;  
+  box-shadow: 4px 4px 14px #000;
 }
 /*pop-up*/
 /* Outer */
@@ -132,7 +132,7 @@ body{
 .popup-inner {
 	text-align:center;
     max-width:600px;
-    height: 250px;
+    height: 400px;
     width:80%;
     padding:15px;
     position:absolute;
