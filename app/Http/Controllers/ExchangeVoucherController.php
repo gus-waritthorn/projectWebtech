@@ -20,4 +20,14 @@ class ExchangeVoucherController extends Controller
     $newRegisCourse -> save();
     return view('voucher');
   }
+
+
+  public function show()
+   {
+       $vouchers =  DB::table('exchangeVoucher')->get();
+
+       return view('my-voucher', [
+         'vouchers' => $vouchers
+       ]);
+   }
 }
