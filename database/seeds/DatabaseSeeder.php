@@ -37,5 +37,32 @@ class DatabaseSeeder extends Seeder
             'role' => 'std'
         ]);
 
+        //add promotion
+        App\Promotion::create([
+            'no' => '1',
+            'path' => 'promo1.png'
+        ]);
+        App\Promotion::create([
+            'no' => '2',
+            'path' => 'promo2.png'
+        ]);
+        App\Promotion::create([
+            'no' => '3',
+            'path' => 'promo3.png'
+        ]);
+
+        //add video
+        App\Vdo::create([
+            'no' => '1',
+            'path' => 'https://www.youtube.com/embed/G4cJ4wviwS8'
+        ]);
+        App\Vdo::create([
+            'no' => '2',
+            'path' => 'https://www.youtube.com/embed/G4cJ4wviwS8'
+        ]);
+        App\Vdo::create([
+            'no' => '3',
+            'path' => 'https://www.youtube.com/embed/G4cJ4wviwS8'
+        ]);
     }
 }
