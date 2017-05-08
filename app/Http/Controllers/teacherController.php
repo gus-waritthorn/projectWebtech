@@ -10,15 +10,14 @@ class TeacherController extends Controller
 {
     function update(request $request){
       if($request->exists('btn-upload')){
-          $file = $request->file('teacher-pic');
+          $file = $request->file('teacher-path');
           $path = '/img/teacher/';
           $filename = $file->getClientOriginalName();
           $file->move(base_path('/public/img/teacher/'),$file->getClientOriginalName());
 
           DB::table('teacher')
-                ->where('no', $request->input('teacher'))
-                ->update(array('path' => $filename, 'name' => input('teacher-name'), 'description' => input('teacher-profile')));
-
+              ->where('no', $request->input('teacher'))
+              ->update(array('path' => $filename, 'name' => $request->input('teacher-name'), 'description' => $request->input('teacher-profile')));
       }
       return view('admin');
     }
