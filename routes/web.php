@@ -18,9 +18,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/my_voucher', ['middleware' => ['std', 'auth'], function () {
-    return view('my-voucher');
-}]);
+Route::get('/my_voucher', ['middleware' => ['std', 'auth'],'uses' => 'ExchangeVoucherController@show']);
 
 Route::get('/my_profile', ['middleware' => ['auth'], function () {
     return view('my-profile');
