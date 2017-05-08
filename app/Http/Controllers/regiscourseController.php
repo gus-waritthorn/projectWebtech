@@ -14,6 +14,9 @@ class RegisCourseController extends Controller
     $newRegisCourse -> userid = $request->input('std-email');
     $newRegisCourse -> courseid = $request->input('course');
     $newRegisCourse -> save();
+
+    $courses =  DB::table('course')->get();
+    
     return view('admin', [
                 'courses' => $courses
     ]);
