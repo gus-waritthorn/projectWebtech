@@ -74,13 +74,13 @@ class DatabaseSeeder extends Seeder
         ]);
         App\Teacher::create([
             'no' => '2',
-            'path' => 'jane.png',
+            'path' => 'jane.jpg',
             'name' => 'Jannifer',
             'description' =>'The Voice Coach',
         ]);
         App\Teacher::create([
             'no' => '3',
-            'path' => 'space.png',
+            'path' => 'space.jpg',
             'name' => 'Jakkawan',
             'description' =>'The Mask Singer Commentator',
         ]);

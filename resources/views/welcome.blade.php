@@ -99,21 +99,21 @@
         <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 60px;"> Teacher</h1>
       </div>
         <div class="col-lg-4">
-          <img class="rounded-circle" src="{{url("/img/promo/{$teachers[0]->path}")}}">
-          <h2> {$teachers[0]->name} </h2>
-          <p>{$teachers[0]->description} </p>
+          <img class="rounded-circle" src="{{url("/img/teacher/{$teachers[0]->path}")}}">
+          <h2> {{$teachers[0]->name}} </h2>
+          <p>{{$teachers[0]->description}} </p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <img class="rounded-circle" src="{{url("/img/promo/{$teachers[1]->path}")}}">
-          <h2>{$teachers[1]->name} </h2>
-          <p>{$teachers[1]->description} </p>
+          <img class="rounded-circle" src="{{url("/img/teacher/{$teachers[1]->path}")}}">
+          <h2>{{$teachers[1]->name}} </h2>
+              <p>{{$teachers[1]->description}}</p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <img class="rounded-circle" src="{{url("/img/promo/{$teachers[2]->path}")}}">
-          <h2>{$teachers[2]->name} </h2>
-          <p>{$teachers[2]->description} </p>
+          <img class="rounded-circle" src= "{{url("/img/teacher/{$teachers[2]->path}")}}">
+          <h2>{{$teachers[2]->name}}</h2>
+          <p>{{$teachers[2]->description}}</p>
         </div><!-- /.col-lg-4 -->
       </div> <!-- End Teacher -->
 
