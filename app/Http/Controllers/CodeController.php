@@ -12,6 +12,8 @@ class CodeController extends Controller
        $newRegisCourse -> code = $request->input('code');
        $newRegisCourse -> idCourse = $request->input('course');
        $newRegisCourse -> save();
-       return view('admin');
+       return view('admin', [
+         'courses' => $courses
+       ]);
    }
 }
