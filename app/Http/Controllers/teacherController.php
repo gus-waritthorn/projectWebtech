@@ -21,7 +21,7 @@ class TeacherController extends Controller
       }
 
       $courses =  DB::table('course')->get();
-      
+
       return view('admin', [
                   'courses' => $courses
       ]);

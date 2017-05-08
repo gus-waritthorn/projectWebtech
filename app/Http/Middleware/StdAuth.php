@@ -22,7 +22,7 @@ class StdAuth
         }
         elseif (Auth::user()->role == 'admin')
         {
-            return redirect('/home');
+            return redirect('/');
         }
         return redirect('/login');
     }

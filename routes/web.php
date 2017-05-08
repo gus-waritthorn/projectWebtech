@@ -18,15 +18,16 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/my_voucher', function () {
+Route::get('/my_voucher', ['middleware' => ['std', 'auth'], function () {
     return view('my-voucher');
-});
+}]);
 
-Route::get('/my_profile', function () {
+Route::get('/my_profile', ['middleware' => ['auth'], function () {
     return view('my-profile');
-});
+}]);
 
-Route::get('/my_course', 'regiscourseController@course');
+Route::get('/my_course', ['middleware' => ['std', 'auth'],'uses' => 'regiscourseController@course']);
+
 Route::get('/courses/{id}', 'courseController@show');
 
 Route::get('/courses', 'courseController@index');
