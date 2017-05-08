@@ -13,14 +13,16 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  
-	   
+
+
   <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-contact.css') }}">
@@ -46,7 +48,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail">Email Address</label>
                 <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
-              </div>  
+              </div>
               <div class="form-group">
                 <label for="subject"> Subject</label>
                 <input type="text" class="form-control" id="subject" placeholder=" Enter Your Subject">
@@ -61,7 +63,7 @@
 
                 <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
               </div>
-              
+
           </div>
         </form>
       </div>
@@ -73,33 +75,33 @@
         </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 ">          
+      <div class="col-lg-4 ">
           <h2 style="text-align: center;">Pongparit Paocharoen</h2>
         </div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4">          
+        <div class="col-lg-4">
           <h2 style="text-align: center;">Waritthorn Viriyamontree</h2>
         </div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4 ">          
+        <div class="col-lg-4 ">
           <h2 style="text-align: center;">Sirasith Kitthaweesinpoon</h2>
         </div><!-- /.col-lg-4 -->
 
     </div>
     <div class="row">
-      
-    <div class="col-lg-4 col-md-offset-2">          
+
+    <div class="col-lg-4 col-md-offset-2">
           <h2 style="text-align: center;">Kamonwut Chittrarat</h2>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">          
+        <div class="col-lg-4">
           <h2 style="text-align: center;">Thiparphan Jiravachruangkul</h2>
         </div><!-- /.col-lg-4 -->
-    </div>    
+    </div>
         @include('layouts._footer')
     </div>
-            
-		
 
-		
+
+
+
 </body>
 </html>

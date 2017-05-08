@@ -18,9 +18,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/my_course', function () {
-    return view('mycourse');
-});
+Route::get('/my_course', 'regiscourseController@course');
+Route::get('/courses/{id}', 'courseController@show');
+
+Route::get('/courses', 'courseController@index');
 
 Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');
@@ -38,6 +39,6 @@ Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
     return view('admin');
 }]);
 
-Route::post('addTeacher','TeacherController@add');
+Route::post('addTeacher','TeacherController@update');
 
 Route::post('createCourse','CourseController@create');
