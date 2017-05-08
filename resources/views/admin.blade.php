@@ -140,11 +140,11 @@
 		var vm = new Vue({
 			el: '#popup_gencode',
 			data: {
-
+				code: ''
 			},
 			methods: {
 				clickGenBtn: function() {
-					alert(this.genCode());
+					this.genCode();
 				},
 				genCode: function() {
 					var text = "";
@@ -152,7 +152,7 @@
 
     				for( var i=0; i < 5; i++ )
         				text += possible.charAt(Math.floor(Math.random() * possible.length));
-    				return text;
+    				this.code = text;
 				}
 			}
 		});

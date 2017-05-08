@@ -12,10 +12,10 @@
 							</select>
 							</h3>
 						</label>
+						<p>@{{code}}</p>
 					</div>
 				<br>
 		        <button  type="submit" class="btn btn-info" style="width: 100%;font-size: 20px;" v-on:click="clickGenBtn">Generate</button>
-
 		        <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
 		    </div>
 		</div>
