@@ -19,6 +19,9 @@ class TeacherController extends Controller
               ->where('no', $request->input('teacher'))
               ->update(array('path' => $filename, 'name' => $request->input('teacher-name'), 'description' => $request->input('teacher-profile')));
       }
+
+      $courses =  DB::table('course')->get();
+      
       return view('admin', [
                   'courses' => $courses
       ]);
