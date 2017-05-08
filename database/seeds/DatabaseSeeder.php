@@ -64,5 +64,52 @@ class DatabaseSeeder extends Seeder
             'no' => '3',
             'path' => 'https://www.youtube.com/embed/G4cJ4wviwS8'
         ]);
+
+        //add teacher
+        App\Teacher::create([
+            'no' => '1',
+            'path' => 'fat.png',
+            'name' => 'Maneenuch',
+            'description' =>'The Mask Singer Commentator',
+        ]);
+        App\Teacher::create([
+            'no' => '2',
+            'path' => 'jane.jpg',
+            'name' => 'Jannifer',
+            'description' =>'The Voice Coach',
+        ]);
+        App\Teacher::create([
+            'no' => '3',
+            'path' => 'space.jpg',
+            'name' => 'Jakkawan',
+            'description' =>'The Mask Singer Commentator',
+        ]);
+
+        App\Course::create([
+            'id' => '1',
+            'name' => 'Guitar',
+            'numday' => '4',
+            'price' => '1500',
+            'level' => 'Beginner',
+            'path' => 'guitarcourses1.jpg'
+        ]);
+
+        App\Course::create([
+            'id' => '2',
+            'name' => 'Piano',
+            'numday' => '4',
+            'price' => '1750',
+            'level' => 'Beginner',
+            'path' => 'pianocourses1.jpg'
+        ]);
+
+        App\Course::create([
+            'id' => '3',
+            'name' => 'Voice',
+            'numday' => '4',
+            'price' => '2000',
+            'level' => 'Beginner',
+            'path' => 'singingcourses1.jpg'
+        ]);
     }
 }

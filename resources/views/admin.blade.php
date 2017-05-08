@@ -128,7 +128,7 @@
             	reader.readAsDataURL(input.files[0]);
         	}
     	  }
-			 $(".teacher-pic").on('change', function(){
+			 $(".new-teacher").on('change', function(){
        			 readURLteacher(this);
     		});
 
