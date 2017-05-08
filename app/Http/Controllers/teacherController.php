@@ -4,16 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teacher;
+use DB;
 
 class TeacherController extends Controller
 {
-    //
-   public function add (Request $request){
-     $newTeacher = new teacher();
-        $newTeacher -> path = $request->input('teacher-pic');
-        $newTeacher -> name = $request->input('teacher-name');
-        $newTeacher -> description = $request->input('teacher-profile');
-        $newTeacher -> save();
-        return view('admin');
+    function update(request $request){
+      if($request->exists('btn-upload')){
+          $file = $request->file('teacher-pic');
+          $path = '/img/teacher/';
+          $filename = $file->getClientOriginalName();
+          $file->move(base_path('/public/img/teacher/'),$file->getClientOriginalName());
+
+          DB::table('teacher')
+                ->where('no', $request->input('teacher'))
+                ->update(array('path' => $filename, 'name' => input('teacher-name'), 'description' => input('teacher-profile')));
+
+      }
+      return view('admin');
     }
 }
