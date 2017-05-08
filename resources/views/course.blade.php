@@ -34,7 +34,7 @@
                 <img class="rounded-circle" src="{{url("/img/course/{$course[0]->path}")}}" >
                 <h1 id="my-course" style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;"> {{ $course[0]->name }}</h1>
                 <h3 style="font-family: 'Acme', sans-serif;text-align: center;color: white;">Level : {{ $course[0]->level }}</h3>
-                <h3 style="font-family: 'Acme', sans-serif;text-align: center;color: white;">Date : {{ $course[0]->numday }} Days per Month</h3>
+                <h3 style="font-family: 'Acme', sans-serif;text-align: center;color: white;">Study : {{ $course[0]->numday }} Days per Month</h3>
                 <h3 style="font-family: 'Acme', sans-serif;text-align: center;color: white;">Price : {{ $course[0]->price }} Baht.</h3>
             </div>
         </div>

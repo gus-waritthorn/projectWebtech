@@ -12,29 +12,29 @@
 							<h4> Course Name: <input id= "course-name" type="text" name="course-name" required></h4>
 					</label>
 					<br>
-						<label><h4>Select Course Level 
+						<label><h4>Select Course Level
 							<select name="course-level" id="level-selected">
 								<option value="Beginner">Beginner</option>
 								<option value="Intermediate">Intermediate</option>
-								<option value="Expert">Expert</option>								
+								<option value="Expert">Expert</option>
 							</select>
 							</h4>
 						</label>
 						<br>
 						<label>
-							<h4>Date: <input id= "course-date" type="int" name="course-date" required></h4>
+							<h4>Study: <input id= "course-date" type="int" name="course-date" required> Days per Month</h4>
 						</label>
 						<br>
 						<label>
 							<h4>Price: <input id= "price" type="text" name="course-price" required></h4>
 						</label>
-						<br>					
+						<br>
 						<label style="margin-bottom: 1.5rem;">
 							<h4 style="text-align: left;">Course Picture: <input class="course-pic"  type="file" name="course-pic" required></h4>
 						</label>
-	
-					</div>				
-				<br >			
+
+					</div>
+				<br >
 		        <button type="submit" name="btn-upload" class="btn btn-info" style="width: 100%;font-size: 20px;">Create Course</button>
 		        <input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 				</form>
