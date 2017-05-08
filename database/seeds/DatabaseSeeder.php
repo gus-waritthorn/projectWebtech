@@ -40,11 +40,11 @@ class DatabaseSeeder extends Seeder
         //add promotion
         App\Promotion::create([
             'no' => '1',
-            'path' => 'promotion1.jpg'
+            'path' => 'promotion1.png'
         ]);
         App\Promotion::create([
             'no' => '2',
-            'path' => 'promotion2.jpg'
+            'path' => 'promotion2.png'
         ]);
         App\Promotion::create([
             'no' => '3',
