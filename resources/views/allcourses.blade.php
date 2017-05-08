@@ -26,9 +26,6 @@
 <body>
 	 @include('layouts._navbar')
 
-    @if (Auth::guest())
-          <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 170px; margin:10% auto;">YOU NEED TO LOGIN TO YOUR ACCOUNT FIRST</h1>
-    @else
       <div class="container">
       	<div class="row">
       		<div  style="background-color: orange;margin:0 auto; margin-top: 7rem;" >
@@ -50,7 +47,6 @@
         @endforeach
 
       </div>
-     @endif
      @include('layouts._footer')
 
 

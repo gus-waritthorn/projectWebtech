@@ -10,11 +10,17 @@ use DB;
 class RegisCourseController extends Controller
 {
   public function add (Request $request){
-    $newRegisCourse = new regiscourse();
-       $newRegisCourse -> userid = $request->input('std-email');
+       $courses =  DB::table('course')->get();
+       $uidresBody = DB::table('users')->where('email', $request->input('std-email'))->select('id')->get();
+       $uidregis = $uidresBody[0];
+
+       $newRegisCourse = new regiscourse();
+       $newRegisCourse -> userid = $uidregis->id;
        $newRegisCourse -> courseid = $request->input('course');
        $newRegisCourse -> save();
-       return view("admin");
+       return view("admin", [
+         'courses' => $courses
+       ]);
    }
 
    public function course (){
@@ -28,7 +34,9 @@ class RegisCourseController extends Controller
 
       // $coursedetail = (object)$coursedetail;
       return view('mycourse', [
-          'coursedetail' => $coursedetail
+          'coursedetail' => $coursedetail,
+          'uid' => $uid,
+          'cid' => $cids
         ]);
     }
 }

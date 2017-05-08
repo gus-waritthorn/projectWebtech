@@ -38,7 +38,7 @@
         @foreach ($coursedetail as $data)
 
             <div class="col-lg-4">
-              <img class="rounded-circle" src="{{url("{$data[0]->path}")}}" >
+              <img class="rounded-circle" src="{{url("/img/course/{$data[0]->path}")}}" >
               <h2>{{ $data[0]->name }}</h2>
               <p><a class="btn btn-secondary" href="{{url("/courses/{$data[0]->id}")}}" role="button">View Course &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
@@ -54,6 +54,8 @@
 
 </body>
 <script>
+  var uid = <?php echo $uid; ?>;
+  var cid = <?php echo $cid; ?>;
 
 </script>
 </html>
