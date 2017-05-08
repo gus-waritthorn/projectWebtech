@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\updatepromotion;
+use App\Promotion;
 use DB;
 
-class updatepromotionController extends Controller
+class PromotionController extends Controller
 {
     function update(request $request){
       if($request->exists('btn-upload')){

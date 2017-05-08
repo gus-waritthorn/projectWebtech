@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-        //create admin user
+        //add admin user
         App\User::create([
             'id' => '1',
             'fname' => 'admin',
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin'
         ]);
 
-        //create student user
+        //add student user
         App\User::create([
             'id' => '2',
             'fname' => 'student',
@@ -36,5 +36,6 @@ class DatabaseSeeder extends Seeder
             'pathimg' => 'https://wog.ua/images/user_icon.png',
             'role' => 'std'
         ]);
+
     }
 }

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\regiscourse;
-class regiscourseController extends Controller
+use App\RegisCourse;
+
+class RegisCourseController extends Controller
 {
   public function add (Request $request){
     $newRegisCourse = new regiscourse();
