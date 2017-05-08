@@ -45,7 +45,7 @@
          @endforeach
 
 
-        @include('layouts._footer')
+        @include('layouts._footer1')
       </div>
      @endif
 
