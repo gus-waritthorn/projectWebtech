@@ -97,6 +97,7 @@
           <h2 style="text-align: center;font-family: 'Oleo Script', cursive;">Thiparphan Jiravachruangkul</h2>
         </div><!-- /.col-lg-4 -->
     </div>
+        @include('layouts._popup-checkin')
         @include('layouts._footer')
     </div>
 

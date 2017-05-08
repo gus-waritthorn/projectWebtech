@@ -41,7 +41,7 @@
         <hr>
 
 
-
+        @include('layouts._popup-checkin')
         @include('layouts._footer')
       </div>
      @endif

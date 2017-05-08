@@ -53,7 +53,7 @@
 
   </div>
 @endif
-
+      @include('layouts._popup-checkin')
     </div>
     @include('layouts._footer')
 

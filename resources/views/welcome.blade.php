@@ -117,6 +117,7 @@
 
 
     </div>
+    @include('layouts._popup-checkin')
     @include('layouts._footer')
 
 
