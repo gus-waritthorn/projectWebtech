@@ -15,7 +15,7 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	   
+
   <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-voucher.css') }}">
@@ -34,60 +34,88 @@
       	</div>
         <hr>
         <!-- Voucher -->
+				<div class="col-lg-4 voucher">
+					<div class="rounded-circle" style="background-color: #FF4081;margin:0 auto" >
+						<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px; ">-5%</h1>
+					</div>
+						<h2>100 Point</h2>
+						<p><a class="btn btn-warning" id="btn0" href="#" role="button" onclick="redeemPoint(100,5); disableBtn(this); ">Redeem a Voucher</a></p>
+				</div><!-- /.col-lg-4 -->
 
-    <div class="col-lg-4 voucher">
-          <div class="rounded-circle" style="background-color: #FF4081;margin:0 auto" >
-          <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px; ">-5%</h1>
-          </div>
-          <h2>100 Point</h2>
-          <p><a class="btn btn-warning" href="#" role="button">Redeem a Voucher</a></p>
-        </div><!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<div class="rounded-circle" style="background-color: #D500F9;margin:0 auto" >
+						<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-10%</h1>
+					</div>
+					<h2>300 Point</h2>
+					<p><a class="btn btn-warning" id="btn1" href="#" role="button" onclick="redeemPoint(300,10); disableBtn(this.id);">Redeem a Voucher</a></p>
+					</div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4">
-          <div class="rounded-circle" style="background-color: #D500F9;margin:0 auto" >
-          <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-10%</h1>
-          </div>
-          <h2>300 Point</h2>
-          <p><a class="btn btn-warning" href="#" role="button">Redeem a Voucher</a></p>
-        </div><!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<div class="rounded-circle" style="background-color: #00B0FF;margin:0 auto" >
+							<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-15%</h1>
+						</div>
+						<h2>500 Point</h2>
+						<p><a class="btn btn-warning" id="btn2" href="#" role="button" onclick="redeemPoint(500,15); disableBtn(this.id);">Redeem a Voucher</a></p>
+					</div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4">
-          <div class="rounded-circle" style="background-color: #00B0FF;margin:0 auto" >
-          <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-15%</h1>
-          </div>
-          <h2>500 Point</h2>
-          <p><a class="btn btn-warning" href="#" role="button">Redeem a Voucher</a></p>
-        </div><!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<div class="rounded-circle" style="background-color: #FFC400;margin:0 auto" >
+							<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-30%</h1>
+						</div>
+						<h2>1000 Point</h2>
+						<p><a class="btn btn-warning" id="btn3" href="#" role="button" onclick="redeemPoint(1000,30); disableBtn(this.id);">Redeem a Voucher</a></p>
+					</div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4">
-          <div class="rounded-circle" style="background-color: #FFC400;margin:0 auto" >
-          <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-30%</h1>
-          </div>
-          <h2>1000 Point</h2>
-          <p><a class="btn btn-warning" href="#" role="button">Redeem a Voucher</a></p>
-        </div><!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<div class="rounded-circle" style="background-color: #FF9100;margin:0 auto" >
+							<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-40%</h1>
+						</div>
+						<h2>2000 Point</h2>
+						<p><a class="btn btn-warning" id="btn4" href="#" role="button" onclick="redeemPoint(2000,40); disableBtn(this.id);">Redeem a Voucher</a></p>
+					</div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-4">
-          <div class="rounded-circle" style="background-color: #FF9100;margin:0 auto" >
-          <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-40%</h1>
-          </div>
-          <h2>2000 Point</h2>
-          <p><a class="btn btn-warning" href="#" role="button">Redeem a Voucher</a></p>
-        </div><!-- /.col-lg-4 -->
-    
-     <div class="col-lg-4">
-          <div class="rounded-circle" style="background-color:#FF3D00 ;margin:0 auto" >
-          <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-50%</h1>
-          </div>
-          <h2>2500 Point</h2>
-          <p><a class="btn btn-warning" href="#" role="button">Redeem a Voucher</a></p>
-        </div><!-- /.col-lg-4 -->
-        @include('layouts._footer')
-      </div>
-     @endif 
-            
-		
+				 	<div class="col-lg-4">
+						<div class="rounded-circle" style="background-color:#FF3D00 ;margin:0 auto" >
+							<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;">-50%</h1>
+						</div>
+						<h2>2500 Point</h2>
+						<p><a class="btn btn-warning" id="btn5" href="#" role="button" onclick="redeemPoint(2500,50); disableBtn(this.id);">Redeem a Voucher</a></p>
+					</div><!-- /.col-lg-4 -->
+					@include('layouts._footer')
+				</div>
+	  @endif
 
-		
+		<form id="formSubmit" action="updatePoint" method="post">
+			<input type="hidden" id="updatePoint" name="updatePoint" value="">
+			<input type="hidden" id="myEmail" name="myEmail" value="">
+		</form>
+
+		<script
+			src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+		 function redeemPoint(usedPoint,percent,btn){
+			 var myEmail = "{{ Auth::user()->email }}";
+			 var myPoint = {{ Auth::user()->point }};
+			 myPoint -= usedPoint;
+			 //myPoint = 1000;
+			 if(myPoint < 0){
+				 alert("points is not enough");
+			 }
+			 else{
+				 console.log("point is enough");
+				 document.getElementById('updatePoint').value = myPoint;
+				 document.getElementById('myEmail').value = myEmail;
+				 document.getElementById('formSubmit').submit();
+				 console.log("already send data");
+			 }
+		 }
+		//  function disableBtn(idBtn){
+		// 	 $(idBth).attr("disabled", true);
+		//  }
+		</script>
+
 </body>
 </html>

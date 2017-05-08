@@ -7,5 +7,7 @@ use App\Voucher;
 
 class VoucherController extends Controller
 {
-    //
+  function update(request $request){
+    
+  }
 }

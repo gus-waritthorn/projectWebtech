@@ -35,3 +35,5 @@ Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
 Route::post('addTeacher','TeacherController@add');
 
 Route::post('createCourse','CourseController@create');
+
+Route::post('updatePoint','ExchangeVoucherController@update');
