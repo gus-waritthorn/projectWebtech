@@ -76,31 +76,29 @@
     </div>
     <div class="row">
       <div class="col-lg-4 ">
-          <h2 style="text-align: center;">Pongparit Paocharoen</h2>
+          <h2 style="text-align: center;font-family: 'Oleo Script', cursive;">Pongparit Paocharoen</h2>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <h2 style="text-align: center;">Waritthorn Viriyamontree</h2>
+          <h2 style="text-align: center;font-family: 'Oleo Script', cursive;">Waritthorn Viriyamontree</h2>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4 ">
-          <h2 style="text-align: center;">Sirasith Kitthaweesinpoon</h2>
+          <h2 style="text-align: center;font-family: 'Oleo Script', cursive;">Sirasith Kitthaweesinpoon</h2>
         </div><!-- /.col-lg-4 -->
 
     </div>
     <div class="row">
 
     <div class="col-lg-4 col-md-offset-2">
-          <h2 style="text-align: center;">Kamonwut Chittrarat</h2>
+          <h2 style="text-align: center;font-family: 'Oleo Script', cursive;">Kamonwut Chittrarat</h2>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <h2 style="text-align: center;">Thiparphan Jiravachruangkul</h2>
+          <h2 style="text-align: center;font-family: 'Oleo Script', cursive;">Thiparphan Jiravachruangkul</h2>
         </div><!-- /.col-lg-4 -->
     </div>
         @include('layouts._footer')
     </div>
-
-
 
 
 </body>
