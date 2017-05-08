@@ -59,6 +59,8 @@
                         @if (Auth::guest())
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                             <li class="divider-vertical"></li>
+                            <li><a href="{{ url('courses') }}"> All Course</a></li>
+                            <li class="divider-vertical"></li>
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
@@ -67,7 +69,8 @@
                             @else
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                             <li class="divider-vertical"></li>
-                            <li><a href="{{ url('my_course') }}"> My Course</a></li> @endif
+                            <li><a href="{{ url('courses') }}"> All Course</a></li>
+                            @endif
                             <li class="divider-vertical"></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -77,6 +80,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                 <li><a href="" > My Profile</a></li>
                                     @if(Auth::user()->role == 'std')
+                                    <li><a href="{{ url('my_course') }}"> My Courses</a></li>
                                     <li><a href="{{ url('mypoint') }}">My Point</a></li>
                                     @endif
                                     <li>

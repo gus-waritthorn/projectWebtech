@@ -62,7 +62,7 @@
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <p class="float-right "><a href="/courses">See All</a></p>
+          <p class="float-right "><a href="{{ url('courses') }}">See All</a></p>
           <img class="rounded-circle" src="{{url("/img/course/{$courses[2]->path}")}}">
           <h2>{{$courses[2]->name}}</h2>
           <p><a class="btn btn-secondary" href="{{url("/courses/{$courses[0]->id}")}}" role="button">View details &raquo;</a></p>
