@@ -26,7 +26,7 @@ Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');
 }]);
 
-Route::post('updatepromotion', 'updatepromotionController@update');
+Route::post('updatepromotion', 'PromotionController@update');
 
 Route::post('updatelink', 'VdoController@update');
 
