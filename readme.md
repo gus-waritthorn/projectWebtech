@@ -1,7 +1,8 @@
 ## High School Musical
+used Laravel PHP Framework.
 
 ## Project in 
-01418443 Web Technology & Web Service
+01418443 Web Technology & Web Service.
 
 ## Contributing
 Pongparit Paocharoen ([@Pongparit](https://github.com/Pongparit))
