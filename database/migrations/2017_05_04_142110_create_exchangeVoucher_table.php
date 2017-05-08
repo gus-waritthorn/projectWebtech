@@ -15,8 +15,9 @@ class CreateExchangeVoucherTable extends Migration
     {
       Schema::create('exchangeVoucher', function (Blueprint $table) {
           $table->increments('no');
-          $table->string('userid');
-          $table->string('voucherid');
+          $table->string('email');
+          $table->string('voucherCode');
+          $table->integer('percent');
           $table->rememberToken();
           $table->timestamps();
       });
