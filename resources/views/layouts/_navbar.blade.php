@@ -13,7 +13,7 @@
                     <!-- Branding Image -->
                     <div class="navbar-header">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img alt="Brand" id="home-icon" src="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
+                        <img alt="Brand" id="home-icon" src="http://icons.iconarchive.com/icons/icons8/windows-8/512/Music-Piano-icon.png">
                     </a>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             @else
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                             <li class="divider-vertical"></li>
-                            <li><a href=""> My Course</a></li>
+                            <li><a href="{{ url('my_course') }}"> My Course</a></li>
                             @endif
                             <li class="divider-vertical"></li>
                             <li class="dropdown">

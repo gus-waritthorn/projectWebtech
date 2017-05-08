@@ -13,6 +13,8 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -96,15 +98,27 @@
 			crossorigin="anonymous"></script>
 
 		<script type="text/javascript">
-		 function redeemPoint(usedPoint,percent,btn){
+			function genCode() {
+				var text = "";
+				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+				for( var i=0; i < 16; i++ ){
+					text += possible.charAt(Math.floor(Math.random() * possible.length));
+				}
+				return text;
+			};
+
+		 	function redeemPoint(usedPoint,percent){
 			 var myEmail = "{{ Auth::user()->email }}";
 			 var myPoint = {{ Auth::user()->point }};
 			 myPoint -= usedPoint;
-			 //myPoint = 1000;
+			 //myPoint = 10000;
 			 if(myPoint < 0){
 				 alert("points is not enough");
 			 }
 			 else{
+				 var code = genCode();
+				 alert(code);
 				 console.log("point is enough");
 				 document.getElementById('updatePoint').value = myPoint;
 				 document.getElementById('myEmail').value = myEmail;
@@ -112,9 +126,8 @@
 				 console.log("already send data");
 			 }
 		 }
-		//  function disableBtn(idBtn){
-		// 	 $(idBth).attr("disabled", true);
-		//  }
+
+
 		</script>
 
 </body>

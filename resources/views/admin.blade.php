@@ -21,6 +21,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-admin.css') }}">
+	<script src="{{ URL::asset('js/vue.min.js') }}"></script>
 	<title>Admin</title>
 </head>
 <body>
@@ -127,10 +128,35 @@
             	reader.readAsDataURL(input.files[0]);
         	}
     	  }
-			 $(".teacher-pic").on('change', function(){
+			 $(".new-teacher").on('change', function(){
        			 readURLteacher(this);
     		});
 
+		});
+	</script>
+
+	{{-- script vue.js  --}}
+	<script>
+		var vm = new Vue({
+			el: '#popup_gencode',
+			data: {
+				showCode: '',
+				aa: false
+			},
+			methods: {
+				clickGenBtn: function() {
+					this.showCode = this.genCode();
+					alert(this.showCode);
+				},
+				genCode: function() {
+					var text = "";
+    				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    				for( var i=0; i < 5; i++ )
+        				text += possible.charAt(Math.floor(Math.random() * possible.length));
+    				return text;
+				}
+			}
 		});
 	</script>
 </body>

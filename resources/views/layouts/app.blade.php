@@ -12,11 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
 
      <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
- 
+
     <link rel="stylesheet" href="{{ URL::asset('css/style-index.css') }}">
     <!-- Scripts -->
     <script>
@@ -42,7 +42,7 @@
                     <!-- Branding Image -->
                     <div class="navbar-header">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img alt="Brand" id="home-icon" src="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
+                        <img alt="Brand" id="home-icon" src="http://icons.iconarchive.com/icons/icons8/windows-8/512/Music-Piano-icon.png">
                     </a>
                     </div>
                 </div>
@@ -63,11 +63,11 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             @if(Auth::user()->role == 'admin')
-                                <li><a href="{{ url('admin') }}"> Admin Control</a></li>    
+                                <li><a href="{{ url('admin') }}"> Admin Control</a></li>
                             @else
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                             <li class="divider-vertical"></li>
-                            <li><a href=""> My Course</a></li> @endif                           
+                            <li><a href="{{ url('my_course') }}"> My Course</a></li> @endif
                             <li class="divider-vertical"></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
