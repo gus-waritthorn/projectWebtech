@@ -78,11 +78,13 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                <li><a href="" > My Profile</a></li>
+                                <li><a href="{{ url('my_profile') }}" > My Profile</a></li>
                                     @if(Auth::user()->role == 'std')
                                     <li><a href="{{ url('my_course') }}"> My Courses</a></li>
                                     <li><a href="{{ url('mypoint') }}">My Point</a></li>
+                                    <li><a href="{{ url('my_voucher') }}">My Voucher</a></li>
                                     @endif
+                                    <hr>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

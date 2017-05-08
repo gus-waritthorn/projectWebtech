@@ -18,6 +18,14 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/my_voucher', function () {
+    return view('my-voucher');
+});
+
+Route::get('/my_profile', function () {
+    return view('my-profile');
+});
+
 Route::get('/my_course', 'regiscourseController@course');
 Route::get('/courses/{id}', 'courseController@show');
 

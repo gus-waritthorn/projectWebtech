@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
             'password' => '$2y$10$B6R/MGVkF9QM.oxGlaoO8.1GxMEiua3JILJFfo.WzYFfr.KnyqbPW',
             'point' => '100',
-            'pathimg' => 'https://wog.ua/images/user_icon.png',
+            'pathimg' => 'https://www.bodynbrain.com/img/unknownProfile.png',
             'role' => 'admin'
         ]);
 
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'student@example.com',
             'password' => '$2y$10$b81y.gp3Mvqe3/ED6sWnROt9bYQwmhIOKCADpnOUbxLFugYYn3.EG',
             'point' => '100',
-            'pathimg' => 'https://wog.ua/images/user_icon.png',
+            'pathimg' => 'https://www.bodynbrain.com/img/unknownProfile.png',
             'role' => 'std'
         ]);
 
