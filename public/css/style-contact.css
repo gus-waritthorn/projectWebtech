@@ -76,18 +76,15 @@ body{
 .float-right{
   float:right!important ;
   font-size:16px;
-   text-shadow: 0 2px #bdc3c7;
 
 }
 footer{
   display:block;
-  font-size:12px;
-  color:#636c72;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding-right: 3rem;
-  background-color: rgba(0, 0, 0, 0.1);
+	font-size:12px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding-right: 3rem;
 }
 
 /*Contact sectiom*/
@@ -98,11 +95,11 @@ footer{
 }
 
 .section-content{
-  text-align: center; 
+  text-align: center;
 
 }
 #contact{
-    
+
     font-family: 'Teko', sans-serif;
   padding-top: 60px;
   width: 100%;
@@ -111,7 +108,7 @@ footer{
   background: #3a6186; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color : #fff;    
+    color : #fff;
 }
 .contact-section{
   padding-top: 40px;
@@ -145,7 +142,7 @@ textarea.form-control {
   font-size: 1.1em;
   float: right;
   width: 150px;
-  
+
   color: #ffff;
 
 }
