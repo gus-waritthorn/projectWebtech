@@ -11,17 +11,14 @@ class PromotionController extends Controller
     function update(request $request){
       if($request->exists('btn-upload')){
           $file = $request->file('promo-path');
-          $path = '/img/promo';
+          $path = '/img/promo/';
           $filename = $file->getClientOriginalName();
-          $file->move('/img/promo',$file->getClientOriginalName());
+          $file->move(base_path('/public/img/promo/'),$file->getClientOriginalName());
 
           DB::table('promotion')
                 ->where('no', $request->input('promo'))
                 ->update(array('path' => $filename));
-
       }
-
-
       return view('admin');
     }
 
