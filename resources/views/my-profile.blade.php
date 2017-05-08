@@ -46,8 +46,6 @@
       <br>
       <label><h3>Last Name : <input type="text" value="{{ Auth::user()->lname }}" name="lname" placeholder="Last Name" /></h3></label>
       <br>
-      <h5>To make these changes, please verify your password</h5>
-      <h3><input type="password" class="login-field" value="" placeholder="Verify Your Password" id="confirm-pass" name="verify-password" size="40"></h3>
       <hr>
       <button  class="btn  btn-lg btn-info" id="btn-save">Save Profile Info</button>
     </form>
