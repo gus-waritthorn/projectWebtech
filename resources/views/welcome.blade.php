@@ -99,22 +99,21 @@
         <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 60px;"> Teacher</h1>
       </div>
         <div class="col-lg-4">
-          <img class="rounded-circle" src="{{ URL::asset('img\teacher\space.jpg') }}">
-          <h2>Jakkawan</h2>
-          <p>The Mask Singer Commentator</p>
+          <img class="rounded-circle" src="{{url("/img/promo/{$teachers[0]->path}")}}">
+          <h2> {$teachers[0]->name} </h2>
+          <p>{$teachers[0]->description} </p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <img class="rounded-circle" src="{{ URL::asset('img\teacher\fat.png') }}">
-          <h2>Maneenuch</h2>
-          <p>The Mask Singer Commentator</p>
+          <img class="rounded-circle" src="{{url("/img/promo/{$teachers[1]->path}")}}">
+          <h2>{$teachers[1]->name} </h2>
+          <p>{$teachers[1]->description} </p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <p class="float-right "><a href="#">See All</a></p>
-          <img class="rounded-circle" src="{{ URL::asset('img\teacher\jane.jpg') }}">
-          <h2>Jannifer</h2>
-          <p>The Voice Coach</p>
+          <img class="rounded-circle" src="{{url("/img/promo/{$teachers[2]->path}")}}">
+          <h2>{$teachers[2]->name} </h2>
+          <p>{$teachers[2]->description} </p>
         </div><!-- /.col-lg-4 -->
       </div> <!-- End Teacher -->
 

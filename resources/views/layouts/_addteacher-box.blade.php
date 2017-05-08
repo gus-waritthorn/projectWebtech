@@ -3,20 +3,32 @@
 		    <div class="toggle-box">
 					<h1>Update Teacher</h1>
 					<hr>
-					<form action="addTeacher" method="post" >
-					<div>
+					<div style="float: left;">
 						<img class="sample-teacher-pic" src="https://placehold.it/150x150" width="150" height="150" style="border-radius: 50%;">
-
+					</div>
+					<form action="addTeacher" method="post" >	
+					<div style="float: left;margin-left:5rem;text-align: left;" >	
+						<label><h4>Select Old Promotion
+							<select name="teacher" id="teacher-selected">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+							</select>
+							</h4>
+						</label>
+						<br>
 						<label>
 							<h4 style="text-align: left;">Teacher Picture: <input class="teacher-pic"  type="file" name="teacher-pic" required></h4>
 						</label>
+						<br>
 						<label>
 							<h4 style="text-align: left;">Teacher Name: <input class="teacher-name" name="teacher-name" type="text" required></h4>
 						</label>
+						<br>
 						<label>
-							<h4 style="text-align: left;">Teacher Profile: <br> ​<textarea id="teacher-profile" name="teacher-profile" rows="3" cols="45" required></textarea></h4>
+							<h4 style="text-align: left;">Teacher Profile: <br> ​<textarea id="teacher-profile" name="teacher-profile" rows="5" cols="45" required></textarea></h4>
 						</label>
-					</div>
+					</div>					
 				<br>
 		        <button  type="submit" class="btn btn-info" style="width: 100%;font-size: 20px;">Update Teacher</button>
 		        <input name="_token" type="hidden" value="{!! csrf_token() !!}" />
