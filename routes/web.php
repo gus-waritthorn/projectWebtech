@@ -20,10 +20,6 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/home', ['middleware' => 'auth', function(){
-    return view('home');
-}]);
-
 Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');
 }]);
