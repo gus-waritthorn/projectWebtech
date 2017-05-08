@@ -27,6 +27,7 @@ Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
 }]);
 
 Route::post('updatepromotion', 'PromotionController@update');
+Route::post('gencode', 'CodeController@add');
 
 Route::post('updatelink', 'VdoController@update');
 

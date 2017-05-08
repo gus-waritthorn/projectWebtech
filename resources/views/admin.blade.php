@@ -21,6 +21,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-admin.css') }}">
+	<script src="{{ URL::asset('js/vue.min.js') }}"></script>
 	<title>Admin</title>
 </head>
 <body>
@@ -139,11 +140,13 @@
 		var vm = new Vue({
 			el: '#popup_gencode',
 			data: {
-
+				showCode: '',
+				aa: false
 			},
 			methods: {
 				clickGenBtn: function() {
-					alert(this.genCode());
+					this.showCode = this.genCode();
+					alert(this.showCode);
 				},
 				genCode: function() {
 					var text = "";
@@ -151,7 +154,7 @@
 
     				for( var i=0; i < 5; i++ )
         				text += possible.charAt(Math.floor(Math.random() * possible.length));
-    				return text;
+    				this.code = text;
 				}
 			}
 		});
