@@ -35,16 +35,16 @@
 
         <table class="table table-striped table-bordered" style="text-align: center;">
           <tr>
-            <th style="text-align: center;">No.</th>
-            <th style="text-align: center;">Discount</th>
+            <th style="text-align: center;">Discount Percent</th>
             <th style="text-align: center;">Code</th>
           </tr>
 
+          @foreach ($vouchers as $voucher)  
           <tr>
-            <td>1</td>
-            <td>50%</td>
-            <td>asdsdsa</td>
+            <td>{{ $voucher->percent }}</td>
+            <td>{{ $voucher->voucherCode }}</td>
           </tr>
+          @endforeach
 
         </table>
 
