@@ -30,12 +30,14 @@
     @else
       <div class="container">
       	<div class="row">
+					<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px; margin:5% auto;">My Point</h1>
       		<div class="rounded-circle" style="background-color: orange;margin:0 auto; margin-top: 7rem;" >
       			<h1 id="my-point" style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;"> {{ Auth::user()->point }}</h1>
       		</div>
       	</div>
         <hr>
         <!-- Voucher -->
+				<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px; margin:5% auto;">Voucher</h1>
 				<div class="col-lg-4 voucher">
 					<div class="rounded-circle" style="background-color: #FF4081;margin:0 auto" >
 						<h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px; ">-5%</h1>
@@ -90,6 +92,8 @@
 		<form id="formSubmit" action="updatePoint" method="post">
 			<input type="hidden" id="updatePoint" name="updatePoint" value="">
 			<input type="hidden" id="myEmail" name="myEmail" value="">
+			<input type="hidden" id="vCode" name="vCode" value="">
+			<input type="hidden" id="percent" name="percent" value="">
 		</form>
 
 		<script
@@ -122,8 +126,11 @@
 				 console.log("point is enough");
 				 document.getElementById('updatePoint').value = myPoint;
 				 document.getElementById('myEmail').value = myEmail;
+				 document.getElementById('vCode').value = vCode;
+				 document.getElementById('percent').value = percent;
 				 document.getElementById('formSubmit').submit();
 				 console.log("already send data");
+
 			 }
 		 }
 

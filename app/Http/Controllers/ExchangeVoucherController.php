@@ -9,11 +9,15 @@ use DB;
 class ExchangeVoucherController extends Controller
 {
   function update(request $request){
-    echo "in php";
     DB::table('users')
           ->where('email', $request->input('myEmail'))
           ->update(array('point' => $request->input('updatePoint')));
-    echo "success";
+          
+    $newRegisCourse = new ExchangeVoucher();
+    $newRegisCourse -> email = $request->input('myEmail');
+    $newRegisCourse -> voucherCode = $request->input('vCode');
+    $newRegisCourse -> percent = $request->input('percent');
+    $newRegisCourse -> save();
     return view('voucher');
   }
 }
