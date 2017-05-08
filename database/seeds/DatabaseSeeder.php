@@ -111,5 +111,32 @@ class DatabaseSeeder extends Seeder
             'level' => 'Beginner',
             'path' => 'singingcourses1.jpg'
         ]);
+
+        App\Course::create([
+            'id' => '4',
+            'name' => 'Piano Intermediate',
+            'numday' => '5',
+            'price' => '3500',
+            'level' => 'Intermediate',
+            'path' => 'piano-intermediate.jpg'
+        ]);
+
+        App\Course::create([
+            'id' => '5',
+            'name' => 'Violin',
+            'numday' => '3',
+            'price' => '3000',
+            'level' => 'Beginner',
+            'path' => 'violin.jpg'
+        ]);
+
+        App\Course::create([
+            'id' => '6',
+            'name' => 'Paino Expert',
+            'numday' => '10',
+            'price' => '10000',
+            'level' => 'Expert',
+            'path' => 'paino-expert.jpg'
+        ]);
     }
 }
