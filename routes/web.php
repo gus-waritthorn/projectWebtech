@@ -35,12 +35,7 @@ Route::post('updatelink', 'VdoController@update');
 
 Route::post('addCourse', 'RegisCourseController@add');
 
-Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
-  $courses =  DB::table('course')->get();
-return view('admin', [
-    'courses' => $courses
-  ]);
-}]);
+Route::get('/admin', ['middleware' => ['admin', 'auth'], 'uses' => 'CourseController@openCourse']);
 
 Route::post('addTeacher','TeacherController@update');
 
