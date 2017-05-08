@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use DB;
 
 class CourseController extends Controller
 {
@@ -18,5 +19,14 @@ class CourseController extends Controller
         $newCourse -> path = $request->input('course-pic');
         $newCourse -> save();
         return view("admin");
+   }
+
+   public function show($id)
+   {
+       $course =  DB::table('course')->where('id', $id)->get();
+
+       return view('course', [
+         'course' => $course
+       ]);
    }
 }

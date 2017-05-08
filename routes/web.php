@@ -18,9 +18,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/my_course', function () {
-    return view('mycourse');
-});
+Route::get('/my_course', 'regiscourseController@course');
+Route::get('/my_course/{id}', 'courseController@show');
 
 Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');

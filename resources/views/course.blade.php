@@ -30,19 +30,16 @@
     @else
       <div class="container">
         <div class="row">
-            <div  style="background-color: orange;margin:0 auto; margin-top: 7rem;" >
-                <h1 id="my-course" style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;"> My Course</h1>
+            <div  style="background-color: orange;margin:0 auto; margin-top: 7rem;text-align: center;" >
+                <img class="rounded-circle" src="{{url("{$course[0]->path}")}}" >
+                <h1 id="my-course" style="font-family: 'Acme', sans-serif;text-align: center;font-size: 100px;vertical-align: middle;color: white;line-height: 250px;"> {{ $course[0]->name }}</h1>
+                <h3 style="font-family: 'Acme', sans-serif;text-align: center;color: white;">Level : {{ $course[0]->level }}</h3>
+                <h3 style="font-family: 'Acme', sans-serif;text-align: center;color: white;">Date : {{ $course[0]->numday }}</h3>
+                <h3 style="font-family: 'Acme', sans-serif;text-align: center;color: white;">Price : {{ $course[0]->price }} Baht.</h3>
             </div>
         </div>
         <hr>
-        @foreach ($coursedetail as $data)
 
-            <div class="col-lg-4">
-              <img class="rounded-circle" src="{{url("{$data[0]->path}")}}" >
-              <h2>{{ $data[0]->name }}</h2>
-              <p><a class="btn btn-secondary" href="{{url("/my_course/{$data[0]->id}")}}" role="button">View Course &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-         @endforeach
 
 
         @include('layouts._footer')
@@ -54,6 +51,6 @@
 
 </body>
 <script>
-
+  var course = <?php echo $course; ?>;
 </script>
 </html>
