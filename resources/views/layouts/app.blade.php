@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
-     <link rel="icon" href="http://www.novelsol.com/wp-content/uploads/2014/12/flaticon-grad.png">
+     <link rel="icon" href="http://icons.iconarchive.com/icons/icons8/windows-8/512/Music-Piano-icon.png">
  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ URL::asset('css/style-index.css') }}">
