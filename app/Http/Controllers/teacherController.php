@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\teacher;
+use App\Teacher;
 
-class teacherController extends Controller
+class TeacherController extends Controller
 {
     //
    public function add (Request $request){
-     $newTeacher = new teacher();    
+     $newTeacher = new teacher();
         $newTeacher -> path = $request->input('teacher-pic');
         $newTeacher -> name = $request->input('teacher-name');
         $newTeacher -> description = $request->input('teacher-profile');
