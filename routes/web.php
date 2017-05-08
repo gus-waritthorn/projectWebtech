@@ -18,24 +18,24 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/home', ['middleware' => 'auth', function(){
-    return view('home');
-}]);
+Route::get('/my_course', function () {
+    return view('mycourse');
+});
 
 Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');
 }]);
 
-Route::post('updatepromotion', 'updatepromotionController@update');
+Route::post('updatepromotion', 'PromotionController@update');
 
-Route::post('updatelink', 'updatelink@update');
+Route::post('updatelink', 'VdoController@update');
 
-Route::post('addCourse', 'regiscourseController@add');
+Route::post('addCourse', 'RegisCourseController@add');
 
 Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
     return view('admin');
 }]);
 
-Route::post('addTeacher','teacherController@add');
+Route::post('addTeacher','TeacherController@add');
 
-Route::post('createCourse','courseController@create');
+Route::post('createCourse','CourseController@create');

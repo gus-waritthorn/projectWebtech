@@ -38,7 +38,7 @@
                             @else
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                             <li class="divider-vertical"></li>
-                            <li><a href=""> My Course</a></li>
+                            <li><a href="{{ url('my_course') }}"> My Course</a></li>
                             @endif
                             <li class="divider-vertical"></li>
                             <li class="dropdown">

@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-        //create admin user
+        //add admin user
         App\User::create([
             'id' => '1',
             'fname' => 'admin',
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin'
         ]);
 
-        //create student user
+        //add student user
         App\User::create([
             'id' => '2',
             'fname' => 'student',
@@ -35,6 +35,34 @@ class DatabaseSeeder extends Seeder
             'point' => '100',
             'pathimg' => 'https://wog.ua/images/user_icon.png',
             'role' => 'std'
+        ]);
+
+        //add promotion
+        App\Promotion::create([
+            'no' => '1',
+            'path' => 'promotion1.jpg'
+        ]);
+        App\Promotion::create([
+            'no' => '2',
+            'path' => 'promotion2.jpg'
+        ]);
+        App\Promotion::create([
+            'no' => '3',
+            'path' => 'promotion3.png'
+        ]);
+
+        //add video
+        App\Vdo::create([
+            'no' => '1',
+            'path' => 'https://www.youtube.com/embed/G4cJ4wviwS8'
+        ]);
+        App\Vdo::create([
+            'no' => '2',
+            'path' => 'https://www.youtube.com/embed/G4cJ4wviwS8'
+        ]);
+        App\Vdo::create([
+            'no' => '3',
+            'path' => 'https://www.youtube.com/embed/G4cJ4wviwS8'
         ]);
     }
 }

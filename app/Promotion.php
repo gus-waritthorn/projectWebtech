@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class updatepromotion extends Model
+class Promotion extends Model
 {
     protected $table = 'promotion';
     protected $fillable = ['path'];
