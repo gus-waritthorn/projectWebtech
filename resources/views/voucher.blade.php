@@ -126,7 +126,7 @@
 				 console.log("point is enough");
 				 document.getElementById('updatePoint').value = myPoint;
 				 document.getElementById('myEmail').value = myEmail;
-				 document.getElementById('vCode').value = vCode;
+				 document.getElementById('vCode').value = code;
 				 document.getElementById('percent').value = percent;
 				 document.getElementById('formSubmit').submit();
 				 console.log("already send data");
