@@ -18,6 +18,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/my_course', function () {
+    return view('mycourse');
+});
+
 Route::get('/mypoint', ['middleware' => ['std', 'auth'], function () {
     return view('voucher');
 }]);
