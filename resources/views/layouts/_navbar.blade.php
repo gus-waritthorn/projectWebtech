@@ -47,7 +47,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="" > My Profile</a></li>
+                                    <li><a href="{{ url('my_profile') }}" > My Profile</a></li>
                                     @if(Auth::user()->role == 'std')
                                     <li><a href="{{ url('mypoint') }}">My Point</a></li>
                                     @endif
