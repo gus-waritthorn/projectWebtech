@@ -136,6 +136,8 @@
 
 	{{-- script vue.js  --}}
 	<script>
+		var courses = <?php echo $courses; ?>
+
 		var vm = new Vue({
 			el: '#popup_gencode',
 			data: {
