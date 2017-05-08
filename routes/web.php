@@ -36,6 +36,6 @@ Route::get('/admin', ['middleware' => ['admin', 'auth'], function () {
     return view('admin');
 }]);
 
-Route::post('addTeacher','TeacherController@add');
+Route::post('addTeacher','TeacherController@update');
 
 Route::post('createCourse','CourseController@create');
