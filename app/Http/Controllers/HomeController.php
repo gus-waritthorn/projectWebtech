@@ -24,11 +24,13 @@ class HomeController extends Controller
        $promos = DB::table('promotion')->select('path')->get();
        $vdolinks = DB::table('vdo')->select('path')->get();
        $teachers = DB::table('teacher')->get();
+       $courses =  DB::table('course')->get();
 
         return view('welcome', [
             'promos' => $promos,
             'vdolinks' => $vdolinks,
-            'teachers' => $teachers
+            'teachers' => $teachers,
+            'courses' => $courses
           ]);
     }
 }

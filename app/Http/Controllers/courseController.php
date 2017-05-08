@@ -16,9 +16,27 @@ class CourseController extends Controller
           $filename = $file->getClientOriginalName();
           $file->move(base_path('/public/img/course/'),$file->getClientOriginalName());
 
-          DB::table('course')              
+          DB::table('course')
               ->insert(array('path' => $filename, 'name' => $request->input('course-name'), 'numday' => $request->input('course-date'),'price' => $request->input('course-price'),'level'=>$request->input('course-level')));
       }
       return view('admin');
+   }
+
+   public function show($id)
+   {
+       $course =  DB::table('course')->where('id', $id)->get();
+
+       return view('course', [
+         'course' => $course
+       ]);
+   }
+
+   public function index()
+   {
+       $courses =  DB::table('course')->get();
+
+       return view('allcourses', [
+         'courses' => $courses
+       ]);
    }
 }

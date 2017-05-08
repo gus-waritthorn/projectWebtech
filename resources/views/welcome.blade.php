@@ -50,25 +50,22 @@
             <h1 style="font-family: 'Acme', sans-serif;text-align: center;font-size: 60px;margin-bottom:5rem; "> Recommended Courses</h1>
         </div>
         <div class="col-lg-4">
-          <img class="rounded-circle" src="https://image.freepik.com/free-vector/guitar-flat-silhouette_23-2147495877.jpg" >
-          <h2>Guitar</h2>
-          <p>The guitar is a musical instrument classified as a fretted string instrument with anywhere from four to 18 strings, usually having six.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <img class="rounded-circle" src="{{url("/img/course/{$courses[0]->path}")}}" >
+          <h2>{{$courses[0]->name}}</h2>
+          <p><a class="btn btn-secondary" href="{{url("/courses/{$courses[0]->id}")}}" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <img class="rounded-circle" src="https://musicologielessons.com/wp-content/uploads/2014/09/1410658084_microphone_voice_record_radio_mic_speech_flat_icon_symbol-512.png">
-          <h2>Singing</h2>
-          <p>Singing is the act of producing musical sounds with the voice, and augments regular speech by the use of sustained tonality, rhythm, and a variety of vocal techniques. A person who sings is called a singer or vocalist.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <img class="rounded-circle" src="{{url("/img/course/{$courses[1]->path}")}}">
+          <h2>{{$courses[1]->name}}</h2>
+          <p><a class="btn btn-secondary" href="{{url("/courses/{$courses[0]->id}")}}" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-          <p class="float-right "><a href="#">See All</a></p>
-          <img class="rounded-circle" src="https://cdn4.iconfinder.com/data/icons/audio-and-video/512/piano_music_classical_instrument_opera_concert_flat_icon_symbol-512.png">
-          <h2>Piano</h2>
-          <p>The piano is an acoustic, stringed musical instrument invented around the year 1700 (the exact year is uncertain), in which the strings are struck by hammers. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <p class="float-right "><a href="/courses">See All</a></p>
+          <img class="rounded-circle" src="{{url("/img/course/{$courses[2]->path}")}}">
+          <h2>{{$courses[2]->name}}</h2>
+          <p><a class="btn btn-secondary" href="{{url("/courses/{$courses[0]->id}")}}" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div> <!-- End Course -->
 
@@ -133,6 +130,7 @@
 
     var promos = <?php echo $promos; ?>;
     var vdolinks = <?php echo $vdolinks; ?>;
+    var courses = <?php echo $courses; ?>;
 
     function plusDivs(n) {
       showDivs(slideIndex += n);

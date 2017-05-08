@@ -84,5 +84,32 @@ class DatabaseSeeder extends Seeder
             'name' => 'Jakkawan',
             'description' =>'The Mask Singer Commentator',
         ]);
+
+        App\Course::create([
+            'id' => '1',
+            'name' => 'Guitar',
+            'numday' => '4',
+            'price' => '1500',
+            'level' => 'Beginner',
+            'path' => 'guitarcourses1.jpg'
+        ]);
+
+        App\Course::create([
+            'id' => '2',
+            'name' => 'Piano',
+            'numday' => '4',
+            'price' => '1750',
+            'level' => 'Beginner',
+            'path' => 'pianocourses1.jpg'
+        ]);
+
+        App\Course::create([
+            'id' => '3',
+            'name' => 'Voice',
+            'numday' => '4',
+            'price' => '2000',
+            'level' => 'Beginner',
+            'path' => 'singingcourses1.jpg'
+        ]);
     }
 }
