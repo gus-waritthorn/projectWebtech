@@ -19,7 +19,12 @@ class PromotionController extends Controller
                 ->where('no', $request->input('promo'))
                 ->update(array('path' => $filename));
       }
-      return view('admin');
+
+      $courses =  DB::table('course')->get();
+      
+      return view('admin', [
+        'courses' => $courses
+      ]);
     }
 
 }

@@ -12,6 +12,11 @@ class VdoController extends Controller
     DB::table('vdo')
           ->where('no', $request->input('video'))
           ->update(array('path' => $request->input('newvideo')));
-    return view('admin');
+
+    $courses =  DB::table('course')->get();
+    
+    return view('admin', [
+                'courses' => $courses
+    ]);
   }
 }
