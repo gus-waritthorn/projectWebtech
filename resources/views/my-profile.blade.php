@@ -34,23 +34,23 @@
   <div class="box">
   <div class="info-box">
 
-    <form action="">
-      <h2>Profile Information</h2>
+    <form action="updateUser" enctype="multipart/form-data" method="post">
+      <h1>Profile Information</h1>
       <div class="profile-pic-zone">
-      <img class="profile-pic" src="{{ Auth::user()->pathimg }}" />
-      <input class="file-upload" value="UPLOAD PICTURE" type="file" capture/>       
       </div>
-      <label class="text-email"><h3>Email : {{ Auth::user()->email }}</h3></label>
+    <h3>Email : {{ Auth::user()->email }}</h3></label>
       <br>
-      <label><h3>First Name : <input type="text" value="{{ Auth::user()->fname }}" name="fname" placeholder="First Name" /></h3></label>
+      <label><h3>First Name : {{ Auth::user()->fname }}</h3></label>
       <br>
-      <label><h3>Last Name : <input type="text" value="{{ Auth::user()->lname }}" name="lname" placeholder="Last Name" /></h3></label>
+      <label><h3>First Name : {{ Auth::user()->lname }}</h3></label>
       <br>
+      @if(Auth::user()->role == 'std')
+      <h3>My point : {{ Auth::user()->point }}</h3>
+      @endif
       <hr>
-      <button  class="btn  btn-lg btn-info" id="btn-save">Save Profile Info</button>
+      <input name="_token" type="hidden" value="{!! csrf_token() !!}" />
     </form>
 
-  </div>
   </div>
 @endif
 
@@ -68,7 +68,7 @@
                 $('.profile-pic').attr('src', e.target.result);
                 $('.profile-icon').attr('src', e.target.result);
             }
-    
+
             reader.readAsDataURL(input.files[0]);
         }
     }
