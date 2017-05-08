@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ExchangeVoucher;
 use DB;
+use Auth;
 
 class ExchangeVoucherController extends Controller
 {
@@ -23,8 +24,9 @@ class ExchangeVoucherController extends Controller
 
 
   public function show()
-   {
-       $vouchers =  DB::table('exchangeVoucher')->get();
+   {    
+      $email = Auth::user()->email;
+       $vouchers =  DB::table('exchangeVoucher')->where('email', $email)->get();
 
        return view('my-voucher', [
          'vouchers' => $vouchers

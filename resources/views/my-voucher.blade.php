@@ -38,14 +38,14 @@
             <th style="text-align: center;">Discount Percent</th>
             <th style="text-align: center;">Code</th>
           </tr>
-
+          @if(!$vouchers->isEmpty())
           @foreach ($vouchers as $voucher)  
           <tr>
             <td>{{ $voucher->percent }}</td>
             <td>{{ $voucher->voucherCode }}</td>
           </tr>
           @endforeach
-
+          @endif
         </table>
 
     </div>
