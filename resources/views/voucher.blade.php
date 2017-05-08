@@ -98,15 +98,27 @@
 			crossorigin="anonymous"></script>
 
 		<script type="text/javascript">
-		 function redeemPoint(usedPoint,percent,btn){
+			function genCode() {
+				var text = "";
+				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+				for( var i=0; i < 16; i++ ){
+					text += possible.charAt(Math.floor(Math.random() * possible.length));
+				}
+				return text;
+			};
+
+		 	function redeemPoint(usedPoint,percent){
 			 var myEmail = "{{ Auth::user()->email }}";
 			 var myPoint = {{ Auth::user()->point }};
 			 myPoint -= usedPoint;
-			 //myPoint = 1000;
+			 //myPoint = 10000;
 			 if(myPoint < 0){
 				 alert("points is not enough");
 			 }
 			 else{
+				 var code = genCode();
+				 alert(code);
 				 console.log("point is enough");
 				 document.getElementById('updatePoint').value = myPoint;
 				 document.getElementById('myEmail').value = myEmail;
@@ -114,9 +126,8 @@
 				 console.log("already send data");
 			 }
 		 }
-		//  function disableBtn(idBtn){
-		// 	 $(idBth).attr("disabled", true);
-		//  }
+
+
 		</script>
 
 </body>
