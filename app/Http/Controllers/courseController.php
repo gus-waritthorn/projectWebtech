@@ -19,7 +19,10 @@ class CourseController extends Controller
           DB::table('course')
               ->insert(array('path' => $filename, 'name' => $request->input('course-name'), 'numday' => $request->input('course-date'),'price' => $request->input('course-price'),'level'=>$request->input('course-level')));
       }
-      return view('admin');
+      $courses =  DB::table('course')->get();
+      return view('admin', [
+        'courses' => $courses
+      ]);
    }
 
    public function show($id)
@@ -39,4 +42,14 @@ class CourseController extends Controller
          'courses' => $courses
        ]);
    }
+
+   public function openCourse()
+   {
+       $courses =  DB::table('course')->get();
+
+       return view('admin', [
+         'courses' => $courses
+       ]);
+   }
+
 }
