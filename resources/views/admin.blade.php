@@ -21,6 +21,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-admin.css') }}">
+	<script src="{{ URL::asset('js/vue.min.js') }}"></script>
 	<title>Admin</title>
 </head>
 <body>
