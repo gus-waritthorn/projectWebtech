@@ -64,5 +64,25 @@ class DatabaseSeeder extends Seeder
             'no' => '3',
             'path' => 'https://www.youtube.com/embed/G4cJ4wviwS8'
         ]);
+
+        //add teacher
+        App\Teacher::create([
+            'no' => '1',
+            'path' => 'fat.png',
+            'name' => 'Maneenuch',
+            'description' =>'The Mask Singer Commentator',
+        ]);
+        App\Teacher::create([
+            'no' => '2',
+            'path' => 'jane.png',
+            'name' => 'Jannifer',
+            'description' =>'The Voice Coach',
+        ]);
+        App\Teacher::create([
+            'no' => '3',
+            'path' => 'space.png',
+            'name' => 'Jakkawan',
+            'description' =>'The Mask Singer Commentator',
+        ]);
     }
 }
