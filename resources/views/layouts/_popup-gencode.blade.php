@@ -1,4 +1,4 @@
-<div class="popup" data-popup="popup-1">
+<div class="popup" data-popup="popup-1" id="popup_gencode">
 		    <div class="popup-inner">
 					<h1>Generate Class Code</h1>
 					<hr>
@@ -14,7 +14,7 @@
 						</label>
 					</div>
 				<br>
-		        <button  type="submit" class="btn btn-info" style="width: 100%;font-size: 20px;">Generate</button>
+		        <button  type="submit" class="btn btn-info" style="width: 100%;font-size: 20px;" v-on:click="clickGenBtn">Generate</button>
 
 		        <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
 		    </div>

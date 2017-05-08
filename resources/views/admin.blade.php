@@ -133,5 +133,28 @@
 
 		});
 	</script>
+
+	{{-- script vue.js  --}}
+	<script>
+		var vm = new Vue({
+			el: '#popup_gencode',
+			data: {
+
+			},
+			methods: {
+				clickGenBtn: function() {
+					alert(this.genCode());
+				},
+				genCode: function() {
+					var text = "";
+    				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    				for( var i=0; i < 5; i++ )
+        				text += possible.charAt(Math.floor(Math.random() * possible.length));
+    				return text;
+				}
+			}
+		});
+	</script>
 </body>
 </html>

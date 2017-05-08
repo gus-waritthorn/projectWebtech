@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\updateyoutubelink;
+use App\Vdo;
 use DB;
 
-class updatelink extends Controller
+class VdoController extends Controller
 {
   function update(request $request){
     DB::table('vdo')
