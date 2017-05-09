@@ -24,7 +24,7 @@ Route::get('/my_profile', ['middleware' => ['auth'], function () {
     return view('my-profile');
 }]);
 
-Route::get('/my_course', ['middleware' => ['std', 'auth'],'uses' => 'regiscourseController@course']);
+Route::get('/my_course', ['middleware' => ['std', 'auth'],'uses' => 'regiscourseController@course','uses' => 'regiscourseController@course']);
 
 Route::get('/courses/{id}', 'courseController@show');
 
@@ -44,7 +44,7 @@ Route::post('updatelink', 'VdoController@update');
 
 Route::post('addCourse', 'RegisCourseController@add');
 
-Route::get('/admin', ['middleware' => ['admin', 'auth'], 'uses' => 'CourseController@openCourse']);
+Route::get('/admin', ['middleware' => ['admin', 'auth'], 'uses' => 'HomeController@alldata']);
 
 Route::post('addTeacher','TeacherController@update');
 

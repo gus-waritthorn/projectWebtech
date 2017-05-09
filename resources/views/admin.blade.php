@@ -27,6 +27,18 @@
 <body>
  	@include('layouts._navbar')
 	<div class="container">
+			<div class="row" style="margin-top: 5rem; margin-left: 30rem;">
+				<div class="col-sm-3">
+					<button class="button" data-toggle-open="toggle-student-table" style="vertical-align:middle;background-color: #e74c3c;"><span>Student Information</span></button>
+				</div>
+				<div class="col-sm-3">
+					<button class="button" data-toggle-open="toggle-teacher-table" style="vertical-align:middle;background-color: #e74c3c;"><span> Teacher Information</span></button>
+				</div>
+
+				<div class="col-sm-3">
+					<button class="button" data-toggle-open="toggle-course-table" style="vertical-align:middle;background-color: #e74c3c;"><span>Course Information</span></button>
+				</div>
+			</div>
 			 <div class="col-md-3" id="col-btn">
 				<button class="button" data-popup-open="popup-1" id= "att" style="vertical-align:middle;background-color: #F57F17;"><span>Generate Code</span></button>
 
@@ -46,6 +58,9 @@
 		    @include('layouts._updatepromo-box')
 		    @include('layouts._upyoutube-box')
 		    @include('layouts._addteacher-box')
+		    @include('layouts._student-table')
+		    @include('layouts._teacher-table')
+		    @include('layouts._course-table')
 		</div> <!-- End toggle box -->
 
 		@include('layouts._popup-gencode')

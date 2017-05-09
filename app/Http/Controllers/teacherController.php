@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Teacher;
 use DB;
 
@@ -20,10 +21,16 @@ class TeacherController extends Controller
               ->update(array('path' => $filename, 'name' => $request->input('teacher-name'), 'description' => $request->input('teacher-profile')));
       }
 
-      $courses =  DB::table('course')->get();
+      $promos = DB::table('promotion')->select('path')->get();
+       $users = DB::table('users')->where('role','std')->get();
+       $teachers = DB::table('teacher')->get();
+       $courses =  DB::table('course')->get();
 
-      return view('admin', [
-                  'courses' => $courses
-      ]);
+        return view('admin', [
+            'promos' => $promos,
+            'users' => $users,
+            'teachers' => $teachers,
+            'courses' => $courses
+          ]);
     }
 }
