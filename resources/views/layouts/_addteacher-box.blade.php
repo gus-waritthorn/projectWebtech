@@ -8,7 +8,7 @@
 					</div>
 					<form action="addTeacher" enctype="multipart/form-data" method="post" >
 					<div style="float: left;margin-left:5rem;text-align: left;" >
-						<label><h4>Select Old Promotion
+						<label><h4>Select Old Teacher
 							<select name="teacher" id="teacher-selected">
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -18,7 +18,7 @@
 						</label>
 						<br>
 						<label>
-							<h3 style="text-align: left;">New Promotion: <input class="new-teacher" value="Upload Teacher" type="file" id="teacher-path" name="teacher-path" required></h3>
+							<h3 style="text-align: left;">New Teacher: <input class="new-teacher" value="Upload Teacher" type="file" id="teacher-path" name="teacher-path" required></h3>
 						</label>
 						<br>
 						<label>
