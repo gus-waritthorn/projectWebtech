@@ -15,13 +15,12 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <link rel="icon" href="http://icons.iconarchive.com/icons/icons8/windows-8/512/Music-Piano-icon.png">
- <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-
-
-
+    <link rel="icon" href="http://icons.iconarchive.com/icons/icons8/windows-8/512/Music-Piano-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/style-index.css') }}">
-<title>Music School</title>
+
+    <title>Music School</title>
+
 </head>
 <body>
     @include('layouts._navbar')
@@ -126,8 +125,8 @@
 
 
 <script type="text/javascript">
-    var slideIndex = 1;
-    showDivs(slideIndex);
+    var slideIndex = 0;
+    showDivs();
 
     var promos = <?php echo $promos; ?>;
     var vdolinks = <?php echo $vdolinks; ?>;
@@ -163,21 +162,23 @@
     function mousedown(e){
       xDown = e.clientX;
     }
-    function showDivs(n) {
+
+    function showDivs() {
       var i;
-      var x = document.getElementsByClassName("mySlides");
+      var slides = document.getElementsByClassName("mySlides");
       var dots = document.getElementsByClassName("demo");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-         x[i].style.display = "none";
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
       }
+      slideIndex++;
+      if (slideIndex> slides.length) {slideIndex = 1}
       for (i = 0; i < dots.length; i++) {
-         dots[i].className = dots[i].className.replace(" w3-white", "");
+          dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " w3-white";
+        setTimeout(showDivs, 3000); // Change image every 3 seconds
       }
-      x[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " w3-white";
-    }
 </script>
 </body>
 </html>
