@@ -38,6 +38,8 @@ Route::post('updatepromotion', 'PromotionController@update');
 
 Route::post('gencode', 'CodeController@add');
 
+Route::post('checkin', 'CodeController@check');
+
 Route::post('updatelink', 'VdoController@update');
 
 Route::post('addCourse', 'RegisCourseController@add');
