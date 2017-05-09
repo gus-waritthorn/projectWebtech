@@ -7,10 +7,9 @@
 					<div class="class">
 						<label><h3>Select Class
 							<select name="course" id="class-selected">
-								<option value="Guitar">Guitar</option>
-								<option value="Singing">Singing</option>
-								<option value="Piano">Piano</option>
-								<option value="Violin">Violin</option>
+								@foreach($courses as $course)
+								<option value="{{ $course->id }}"> {{ $course->name }} : {{ $course->level }}</option>
+								@endforeach
 							</select>
 							</h3>
 						</label>
