@@ -85,6 +85,7 @@
 						<h2>2500 Point</h2>
 						<p><a class="btn btn-warning" id="btn5" href="#" role="button" onclick="redeemPoint(2500,50); disableBtn(this.id);">Redeem a Voucher</a></p>
 					</div><!-- /.col-lg-4 -->
+					@include('layouts._popup-checkin')
 					@include('layouts._footer')
 				</div>
 	  @endif

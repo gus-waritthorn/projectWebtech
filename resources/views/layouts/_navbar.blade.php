@@ -40,6 +40,8 @@
                             @else
                             <li><a href="{{ url('contact') }}">Contact Us</a></li>
                             <li class="divider-vertical"></li>
+                            <li><a data-popup-open="popup-checkin" href="#"><span>Check-in</span></a><li>
+                            <li class="divider-vertical"></li>
                             <li><a href="{{ url('courses') }}"> All Course</a></li>
                             @endif
                             <li class="divider-vertical"></li>
@@ -75,3 +77,85 @@
             </div>
         </nav>
         <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+        <script type="text/javascript">
+        $(function() {
+        //----- OPEN
+            $('[data-popup-open]').on('click', function(e)  {
+                var targeted_popup_class = jQuery(this).attr('data-popup-open');
+                $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+
+                e.preventDefault();
+            });
+
+            //----- CLOSE
+            $('[data-popup-close]').on('click', function(e)  {
+                var targeted_popup_class = jQuery(this).attr('data-popup-close');
+                $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+
+                e.preventDefault();
+            });
+
+        });
+    </script>
+    <style>
+    /*pop-up*/
+/* Outer */
+.popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+}
+
+/* Inner */
+.popup-inner {
+    text-align:center;
+    max-width:500px;
+    height: 300px;
+    width:80%;
+    padding:15px;
+    position:absolute;
+    top:40%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+    background:#fff;
+}
+
+/* Close Button */
+.popup-close {
+    width:30px;
+    height:30px;
+    padding-top:4px;
+    display:inline-block;
+    position:absolute;
+    top:0px;
+    right:0px;
+    transition:ease 0.25s all;
+    -webkit-transform:translate(50%, -50%);
+    transform:translate(50%, -50%);
+    border-radius:1000px;
+    background:rgba(0,0,0,0.8);
+    font-family:Arial, Sans-Serif;
+    font-size:20px;
+    text-align:center;
+    line-height:100%;
+    color:#fff;
+}
+
+.popup-close:hover {
+    -webkit-transform:translate(50%, -50%) rotate(180deg);
+    transform:translate(50%, -50%) rotate(180deg);
+    background:rgba(0,0,0,1);
+    text-decoration:none;
+}
+.input-checkin{
+    height: 60px;
+}
+    </style>
+}

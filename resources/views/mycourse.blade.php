@@ -44,7 +44,7 @@
             </div><!-- /.col-lg-4 -->
          @endforeach
 
-
+        @include('layouts._popup-checkin')
         @include('layouts._footer1')
       </div>
      @endif
