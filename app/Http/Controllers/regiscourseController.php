@@ -10,7 +10,6 @@ use DB;
 class RegisCourseController extends Controller
 {
   public function add (Request $request){
-       $courses =  DB::table('course')->get();
        $uidresBody = DB::table('users')->where('email', $request->input('std-email'))->select('id')->get();
        $uidregis = $uidresBody[0];
 
@@ -18,9 +17,18 @@ class RegisCourseController extends Controller
        $newRegisCourse -> userid = $uidregis->id;
        $newRegisCourse -> courseid = $request->input('course');
        $newRegisCourse -> save();
-       return view("admin", [
-         'courses' => $courses
-       ]);
+       
+       $promos = DB::table('promotion')->select('path')->get();
+       $users = DB::table('users')->where('role','std')->get();
+       $teachers = DB::table('teacher')->get();
+       $courses =  DB::table('course')->get();
+
+        return view('admin', [
+            'promos' => $promos,
+            'users' => $users,
+            'teachers' => $teachers,
+            'courses' => $courses
+          ]);
    }
 
    public function course (){

@@ -16,11 +16,23 @@ class CodeController extends Controller
        $newRegisCourse -> idCourse = $request->input('course');
        $newRegisCourse -> save();
 
+       // $courses =  DB::table('course')->get();
+
+       // return view('admin', [
+       //   'courses' => $courses
+       // ]);
+
+       $promos = DB::table('promotion')->select('path')->get();
+       $users = DB::table('users')->where('role','std')->get();
+       $teachers = DB::table('teacher')->get();
        $courses =  DB::table('course')->get();
 
-       return view('admin', [
-         'courses' => $courses
-       ]);
+        return view('admin', [
+            'promos' => $promos,
+            'users' => $users,
+            'teachers' => $teachers,
+            'courses' => $courses
+          ]);
    }
 
    public function check(Request $request){

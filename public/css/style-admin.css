@@ -45,9 +45,6 @@ body{
 }
 
 /*Button*/
-#col-btn{
-	margin-top: 15rem;
-}
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -96,7 +93,7 @@ body{
   display: none;
 }
 #col-toggle-box{
-  margin-top: 40rem;
+  margin-top:28rem;
 }
 .toggle-box{
     text-align:center;
