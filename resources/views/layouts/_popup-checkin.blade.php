@@ -5,9 +5,6 @@
 
 					<form action="checkin" method="post">
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-					<label><h3>Select Class
-						</h3>
-					</label>
 					<input class ="input-checkin" type="text" name="check-in-code"
 					style="font-size: 25px"  required />
 				<br><br><hr>
